@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useAuth } from "@/lib/auth"
 import Image from "next/image"
+import Link from "next/link"
+import { BookOpen } from "lucide-react"
 
 export function LoginForm() {
   const [username, setUsername] = useState("")
@@ -29,8 +31,9 @@ export function LoginForm() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4 md:p-6">
-      <Card className="w-full max-w-md">
+    <>
+      <div className="min-h-screen flex items-center justify-center bg-background p-4 md:p-6">
+        <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
             <div className="bg-gradient-to-br from-pink-300 via-violet-300 to-pink-200 rounded-full p-3 flex items-center justify-center shadow-sm">
@@ -88,5 +91,17 @@ export function LoginForm() {
         </CardContent>
       </Card>
     </div>
+
+    {/* Floating User Manual Button */}
+    <Link href="/user-manual" target="_blank" className="fixed bottom-6 right-6 z-50">
+      <Button 
+        size="lg" 
+        className="shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700"
+      >
+        <BookOpen className="w-5 h-5 mr-2" />
+        User Manual
+      </Button>
+    </Link>
+  </>
   )
 }

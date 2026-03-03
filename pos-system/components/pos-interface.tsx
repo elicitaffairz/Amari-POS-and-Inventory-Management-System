@@ -379,7 +379,7 @@ export function POSInterface() {
 
   const CartContent = () => (
     <>
-      <div className="flex-1 overflow-auto space-y-3 p-6">
+      <div className="flex-1 overflow-auto space-y-3 p-6 min-h-0">
         {cart.length === 0 ? (
           <div className="text-center py-12">
             <ShoppingCart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
@@ -417,10 +417,10 @@ export function POSInterface() {
       </div>
 
       {cart.length > 0 && (
-        <div className="p-6 border-t">
-          <div className="space-y-5">
+        <div className="p-4 border-t shrink-0">
+          <div className="space-y-3">
             <div>
-              <div className="flex justify-between items-center text-lg font-bold mb-2">
+              <div className="flex justify-between items-center text-lg font-bold mb-1">
                 <span>Total</span>
                 <span className="text-primary">₱{getTotalAmount().toFixed(2)}</span>
               </div>
@@ -680,7 +680,7 @@ export function POSInterface() {
   )
 
   return (
-    <div className={`flex flex-col lg:flex-row lg:h-screen bg-background ${isLeftHanded ? 'lg:flex-row-reverse' : ''}`}>
+    <div className={`flex flex-col lg:flex-row h-full overflow-hidden bg-background ${isLeftHanded ? 'lg:flex-row-reverse' : ''}`}>
       {/* Product Grid Section */}
       <div className="flex-1 p-4 md:p-6 lg:p-8 flex flex-col min-w-0 h-full overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
@@ -785,7 +785,7 @@ export function POSInterface() {
 
       {/* Large screens: persistent cart sidebar */}
 
-      <div className={`hidden lg:flex w-full lg:w-80 xl:w-96 bg-card flex-col h-screen max-h-screen ${isLeftHanded ? 'border-r border-border' : 'border-l border-border'}`}>
+      <div className={`hidden lg:flex w-full lg:w-80 xl:w-96 bg-card flex-col h-full min-h-0 ${isLeftHanded ? 'border-r border-border' : 'border-l border-border'}`}>
         <div className="flex items-center justify-between p-6 border-b">
           <h2 className="text-xl font-bold">Cart</h2>
           {cart.length > 0 && (

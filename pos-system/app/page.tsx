@@ -102,7 +102,7 @@ function AppContent() {
           </div>
         </header>
 
-        <main className="flex-1 overflow-auto">{renderView()}</main>
+        <main className="flex-1 overflow-hidden">{renderView()}</main>
       </div>
     </div>
   )
