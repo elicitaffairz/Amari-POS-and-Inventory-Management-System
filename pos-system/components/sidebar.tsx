@@ -55,7 +55,7 @@ export function Sidebar({ activeView, onViewChange }: SidebarProps) {
         <div className="flex items-center space-x-3">
           <div className="rounded-lg">
             <Image
-              src="/amari-logo1.png"
+              src="/amari-blue-logo.png"
               alt="Amari's Scoops & Savours Logo"
               width={100}
               height={100}
