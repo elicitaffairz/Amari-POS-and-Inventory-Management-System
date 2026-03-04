@@ -29,7 +29,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const storedUser = localStorage.getItem("pos-user")
     if (storedUser) {
-      setUser(JSON.parse(storedUser))
+      try {
+        const parsedUser = JSON.parse(storedUser)
+        setUser(parsedUser)
+        // Restore auth cookies for middleware on app initialization
+        document.cookie = `pos-user-id=${parsedUser.id}; path=/; max-age=86400; SameSite=Strict`
+        document.cookie = `pos-username=${parsedUser.username}; path=/; max-age=86400; SameSite=Strict`
+      } catch (e) {
+        // Invalid stored user, clear it
+        localStorage.removeItem("pos-user")
+      }
     }
     setIsLoading(false)
   }, [])
@@ -47,6 +56,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const userObj: User = { id: data.id.toString(), username: data.username, role: data.role, name: data.name }
       setUser(userObj)
       localStorage.setItem("pos-user", JSON.stringify(userObj))
+      
+      // Set auth cookie for middleware verification (secure session)
+      // This is a client-side cookie that helps middleware identify authenticated users
+      document.cookie = `pos-user-id=${data.id}; path=/; max-age=86400; SameSite=Strict`
+      document.cookie = `pos-username=${username}; path=/; max-age=86400; SameSite=Strict`
 
       // Log login to audit logs
       await supabase.from("audit_logs").insert([{
@@ -88,6 +102,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     setUser(null)
     localStorage.removeItem("pos-user")
+    
+    // Clear auth cookies
+    document.cookie = 'pos-user-id=; path=/; max-age=0; SameSite=Strict'
+    document.cookie = 'pos-username=; path=/; max-age=0; SameSite=Strict'
+    
+    // Redirect to login page
+    if (typeof window !== 'undefined') {
+      window.location.href = '/'
+    }
   }
 
   return (

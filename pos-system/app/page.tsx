@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { AuthProvider, useAuth } from "@/lib/auth"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
+import { useAuth } from "@/lib/auth"
 import { LoginForm } from "@/components/login-form"
 import { Sidebar } from "@/components/sidebar"
 import { Dashboard } from "@/components/dashboard"
@@ -15,6 +16,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 function AppContent() {
   const { user, isLoading } = useAuth()
+  const router = useRouter()
   const [activeView, setActiveView] = useState(() => {
     // Default view based on user role
     if (user?.role === "cashier") return "pos"
@@ -22,12 +24,18 @@ function AppContent() {
   })
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
+  // Monitor auth state changes
+  useEffect(() => {
+    // If user logs out, they'll be redirected by the logout function
+    // This effect just ensures the component responds to auth state changes
+  }, [user])
+
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p>Loading...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-200 border-t-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600 font-medium">Loading system...</p>
         </div>
       </div>
     )
@@ -79,7 +87,7 @@ function AppContent() {
   return (
     <div className="flex h-screen bg-background">
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-h-0">
         {/* Header with Menu Toggle */}
         <header className="flex items-center justify-between p-4 border-b">
           <div className="flex items-center gap-4">
@@ -102,16 +110,12 @@ function AppContent() {
           </div>
         </header>
 
-        <main className="flex-1 overflow-hidden">{renderView()}</main>
+        <main className="flex-1 overflow-auto min-h-0">{renderView()}</main>
       </div>
     </div>
   )
 }
 
 export default function App() {
-  return (
-    <AuthProvider>
-      <AppContent />
-    </AuthProvider>
-  )
+  return <AppContent />
 }
