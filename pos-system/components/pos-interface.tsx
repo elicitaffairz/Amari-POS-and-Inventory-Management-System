@@ -611,7 +611,7 @@ export function POSInterface() {
                         className="w-auto px-8"
                         size="lg"
                       >
-                        {isProcessing ? "Processing..." : (paymentType === 'Cash' ? 'Confirm Cash Payment' : 'Confirm Payment')}
+                        {isProcessing ? "Processing..." : (paymentType === 'Cash' ? 'Confirm Payment' : 'Confirm Payment')}
                       </Button>
                     </div>
                   </div>

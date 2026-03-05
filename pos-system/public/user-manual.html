@@ -267,7 +267,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
                 <div class="sb-item">📊 Reports</div>
                 <div class="sb-item">⚙️ Settings</div>
               </div>
-              <div class="sb-logout">⏻ Logout</div>
+              <div class="sb-logout">⏻ Sign out</div>
             </div>
             <div class="sb-content">Main content area</div>
           </div>
@@ -278,7 +278,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
         <ul class="blist" style="margin:0;">
           <li>The <strong>highlighted item</strong> (blue) shows your current module.</li>
           <li>Click any item to switch modules instantly.</li>
-          <li>The <strong>Logout</strong> button is always visible at the bottom of the sidebar.</li>
+          <li>The <strong>Sign out</strong> button is always visible at the bottom of the sidebar.</li>
         </ul>
       </div>
     </div>
@@ -287,7 +287,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
 
   <div class="doc-footer">
     <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 1 of 7</span>
+    <span class="df-t">Page 1 of 9</span>
   </div>
 </div>
 
@@ -410,7 +410,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
 
   <div class="doc-footer">
     <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 2 of 7</span>
+    <span class="df-t">Page 2 of 9</span>
   </div>
 </div>
 
@@ -535,7 +535,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
 
   <div class="doc-footer">
     <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 3 of 7</span>
+    <span class="df-t">Page 3 of 9</span>
   </div>
 </div>
 
@@ -561,31 +561,30 @@ p.txt strong { color: #0F172A; font-weight: 600; }
     <p class="txt">The POS module is where you process customer transactions. It is available to all roles. Products appear in a grid — add them to the cart, then check out.</p>
 
     <div class="fig-frame" style="margin-top:4px;">
-      <div class="pos-topbar">
-        <span>🛒 Point of Sale</span>
-        <div class="pos-search">🔍 Search products…</div>
-        <span style="font-size:8.5px;color:rgba(255,255,255,0.4);font-family:'JetBrains Mono',monospace;">📷 Scan</span>
+      <div class="fig-bar">
+        <div class="dot" style="background:#FF5F57"></div>
+        <div class="dot" style="background:#FEBC2E"></div>
+        <div class="dot" style="background:#28C840"></div>
+        <span class="fig-url">Amari POS › Point of Sale</span>
       </div>
-      <div class="pos-wrap">
-        <div class="pos-grid">
-          <div class="pcard sel"><em>☕</em><div class="pn">Espresso</div><div class="pp">₱85</div></div>
-          <div class="pcard"><em>🍰</em><div class="pn">Slice Cake</div><div class="pp">₱120</div></div>
-          <div class="pcard"><em>🥤</em><div class="pn">Iced Latte</div><div class="pp">₱110</div></div>
-          <div class="pcard"><em>🫖</em><div class="pn">Matcha</div><div class="pp">₱95</div></div>
-          <div class="pcard"><em>🧁</em><div class="pn">Cupcake</div><div class="pp">₱65</div></div>
-          <div class="pcard"><em>🍫</em><div class="pn">Choco Drink</div><div class="pp">₱100</div></div>
-        </div>
-        <div class="pos-cart">
-          <div class="ct-title">Current Order</div>
-          <div class="ct-row"><span>Espresso ×2</span><span>₱170</span></div>
-          <div class="ct-row"><span>Slice Cake ×1</span><span>₱120</span></div>
-          <div class="ct-row" style="font-size:8px;color:#CBD5E1;border:none;padding-top:4px;"><span>Subtotal</span><span>₱290</span></div>
-          <div class="ct-row" style="font-size:8px;color:#CBD5E1;border:none;"><span>Tax 12%</span><span>₱34.80</span></div>
-          <div class="ct-total">Complete Sale — ₱324.80</div>
-        </div>
+      <div class="fig-body" style="padding:0;">
+        <img src="/pos.png" alt="POS main screen" style="width:100%;display:block;" />
       </div>
     </div>
-    <p class="fig-cap">Figure 4 — POS screen: product grid (left) and cart panel with Complete Sale button (right)</p>
+    <p class="fig-cap">Figure 4 — POS screen with product grid, cart panel, and checkout button</p>
+
+    <div class="fig-frame" style="margin-top:10px;">
+      <div class="fig-bar">
+        <div class="dot" style="background:#FF5F57"></div>
+        <div class="dot" style="background:#FEBC2E"></div>
+        <div class="dot" style="background:#28C840"></div>
+        <span class="fig-url">Amari POS › Complete Transaction</span>
+      </div>
+      <div class="fig-body" style="padding:0;">
+        <img src="/complete-sale.png" alt="Complete transaction modal" style="width:100%;display:block;" />
+      </div>
+    </div>
+    <p class="fig-cap">Figure 4.1 — Checkout modal with receipt preview and payment options</p>
 
     <div class="two-col">
       <div>
@@ -606,11 +605,11 @@ p.txt strong { color: #0F172A; font-weight: 600; }
         </div>
       </div>
       <div>
-        <div class="sub-title">3.2 Completing a Sale</div>
+        <div class="sub-title">3.2 Completing a Transaction</div>
         <div class="steps">
           <div class="step"><div class="snum">1</div><div class="stxt">Review items and quantities in the cart.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">Apply a <strong>discount</strong> if needed.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt">Click <strong>Complete Sale</strong>. Select the payment method.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Select <strong>Payment Method</strong>. Enter amount received.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">Click <strong>Confirm Payment</strong> button.</div></div>
           <div class="step"><div class="snum">4</div><div class="stxt">A <strong>receipt</strong> appears on screen. Stock is deducted automatically.</div></div>
         </div>
         <div class="flow-box">
@@ -627,8 +626,8 @@ p.txt strong { color: #0F172A; font-weight: 600; }
     <div class="note note-info" style="margin-top:10px;">
       <div class="nicon">📷</div>
       <div class="ntxt">
-        <strong>3.3 — Barcode / QR Scanning</strong>
-        Click <b>Scan</b> on the POS screen → allow camera access when prompted → point at the barcode → product is added to the cart automatically. If the browser asks for permission, click <b>Allow</b>. Refresh the page if scanning does not start.
+        <strong>3.3 — E-Payment QR Code Scanning</strong>
+        If customer chooses <b>E-Payment</b> as the payment method, a QR code appears on the payment screen. Customer scans it with their e-wallet app to complete the transaction.
       </div>
     </div>
 
@@ -636,7 +635,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
 
   <div class="doc-footer">
     <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 4 of 7</span>
+    <span class="df-t">Page 4 of 9</span>
   </div>
 </div>
 
@@ -659,48 +658,72 @@ p.txt strong { color: #0F172A; font-weight: 600; }
     <div class="sec-title">Inventory Management</div>
     <div class="sec-rule"></div>
 
-    <p class="txt">The Inventory module lets you manage the products you sell and the ingredients used to make them. Access is limited to <span class="rp rp-o">Owner</span> and <span class="rp rp-m">Manager</span> roles.</p>
+    <p class="txt">The Inventory module is where you maintain your sellable products and raw ingredients. Use it daily to keep pricing accurate, avoid stockouts, and ensure every POS sale deducts the correct items. Access is limited to <span class="rp rp-o">Owner</span> and <span class="rp rp-m">Manager</span> roles.</p>
 
-    <div class="sub-title">4.1 Products — View, Add, Edit, Delete</div>
+    <div class="sub-title">What You Can Do in Inventory</div>
+    <ul class="blist" style="margin-bottom:14px;">
+      <li><strong>Products</strong> — add new menu items, update prices, and manage availability.</li>
+      <li><strong>Ingredients</strong> — track raw stock levels and minimum thresholds.</li>
+      <li><strong>Stock control</strong> — identify low inventory early to prevent missed sales.</li>
+    </ul>
 
-    <table class="dtable" style="margin-top:4px;">
-      <thead><tr><th>Product Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>Espresso</td><td>Beverage</td><td>₱85.00</td><td>50 units</td>
-          <td><span class="tag-edit">✏ Edit</span> &nbsp;<span class="tag-del">🗑 Delete</span></td>
-        </tr>
-        <tr>
-          <td>Slice Cake</td><td>Food</td><td>₱120.00</td>
-          <td style="color:#B91C1C;font-weight:700;">⚠ 3 units</td>
-          <td><span class="tag-edit">✏ Edit</span> &nbsp;<span class="tag-del">🗑 Delete</span></td>
-        </tr>
-        <tr>
-          <td>Iced Latte</td><td>Beverage</td><td>₱110.00</td><td>28 units</td>
-          <td><span class="tag-edit">✏ Edit</span> &nbsp;<span class="tag-del">🗑 Delete</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="fig-cap">Figure 5 — Products table. Rows with critically low stock are highlighted in red.</p>
+    <div class="sub-title">4.1 Products — Create, Update, and Remove Items</div>
 
-    <div class="two-col">
-      <div>
-        <div class="steps">
-          <div class="step"><div class="snum">1</div><div class="stxt">Click <strong>Inventory</strong> in the sidebar. The Products tab opens by default.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">To <strong>add</strong>: click <strong>+ Add Product</strong> → fill in the details → click <strong>Save</strong>.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt">To <strong>edit</strong>: click <span class="tag-edit">✏ Edit</span> on a row → update the fields → click <strong>Save</strong>.</div></div>
-          <div class="step"><div class="snum">4</div><div class="stxt">To <strong>delete</strong>: click <span class="tag-del">🗑 Delete</span> → confirm the prompt → product is removed.</div></div>
+    <div class="fig-frame" style="margin-top:6px;">
+      <div class="fig-bar">
+        <div class="dot" style="background:#FF5F57"></div>
+        <div class="dot" style="background:#FEBC2E"></div>
+        <div class="dot" style="background:#28C840"></div>
+        <span class="fig-url">Amari POS › Inventory › Products</span>
+      </div>
+      <div style="background:#F8FAFC;padding:12px 14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <div style="font-size:10px;font-weight:700;color:#0F172A;">Products</div>
+          <div style="display:flex;gap:6px;">
+            <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:4px 8px;font-size:8px;color:#94A3B8;">Search product...</div>
+            <div style="background:#1B3FAB;color:#fff;border-radius:5px;padding:4px 8px;font-size:8px;font-weight:700;">+ Add Product</div>
+          </div>
         </div>
+        <table class="dtable" style="margin:0;">
+          <thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Ube Sundae</td><td>Dessert</td><td>₱95.00</td><td>32</td><td><span class="tag-ok">In Stock</span></td><td><span class="tag-edit">Edit</span></td></tr>
+            <tr><td>Caramel Float</td><td>Drinks</td><td>₱120.00</td><td>6</td><td><span class="tag-low">Low</span></td><td><span class="tag-edit">Edit</span></td></tr>
+            <tr><td>Choco Chip Cup</td><td>Dessert</td><td>₱85.00</td><td>0</td><td><span class="tag-low">Out</span></td><td><span class="tag-del">Delete</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="fig-cap">Figure 5 — Inventory Products view with list, stock status, and actions</p>
+
+    <div class="two-col" style="grid-template-columns: 360px 1fr; align-items: start; margin-top:10px;">
+      <div>
+        <div class="fig-frame" style="width: 360px; max-width: 360px;">
+          <div class="fig-bar">
+            <div class="dot" style="background:#FF5F57"></div>
+            <div class="dot" style="background:#FEBC2E"></div>
+            <div class="dot" style="background:#28C840"></div>
+            <span class="fig-url">Amari POS › Add Product</span>
+          </div>
+          <div style="padding:10px 12px;background:#fff;">
+            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:6px;">Add New Product</div>
+            <div style="display:grid;gap:5px;">
+              <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Product name</div>
+              <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Category</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
+                <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Price</div>
+                <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Initial stock</div>
+              </div>
+              <div style="background:#1B3FAB;color:#fff;border-radius:4px;padding:5px 8px;font-size:8px;font-weight:700;text-align:center;">Add Product</div>
+            </div>
+          </div>
+        </div>
+        <p class="fig-cap">Figure 5.1 — Product form layout</p>
       </div>
       <div>
-        <div class="flow-box" style="margin-top:0;">
-          <div class="flow-label">Save Flow</div>
-          <div class="flow-chain">
-            <div class="fn">Fill in details</div><div class="fa">→</div>
-            <div class="fn">Click Save</div><div class="fa">→</div>
-            <div class="fn">System updates catalog</div><div class="fa">→</div>
-            <div class="fn">Table refreshes</div>
-          </div>
+        <div class="note note-info" style="margin-top:0;">
+          <div class="nicon">🧾</div>
+          <div class="ntxt"><strong>Data quality tip</strong>Use consistent product names, categories, and units to keep reports clean and prevent duplicate menu items.</div>
         </div>
         <div class="note note-warn" style="margin-top:10px;">
           <div class="nicon">⚠️</div>
@@ -709,50 +732,162 @@ p.txt strong { color: #0F172A; font-weight: 600; }
       </div>
     </div>
 
-    <div class="div"></div>
-
-    <div class="sub-title">4.2 Ingredients</div>
-
-    <div class="two-col">
+    <div class="two-col" style="margin-top:4px;">
       <div>
+        <div class="sub-title" style="margin-top:0;">Product Workflow</div>
         <div class="steps">
-          <div class="step"><div class="snum">1</div><div class="stxt">Click the <strong>Ingredients</strong> tab at the top of the Inventory page.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">Click <strong>+ Add Ingredient</strong> → enter the name, unit, quantity, and <strong>minimum threshold</strong> → Save.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt">Any ingredient below its minimum is highlighted in <strong style="color:#B91C1C;">red</strong> — reorder as soon as possible.</div></div>
+          <div class="step"><div class="snum">1</div><div class="stxt">Open <strong>Inventory</strong>. Confirm you are in the <strong>Products</strong> tab.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Click <strong>+ Add Product</strong>, complete the fields, then click <strong>Add Product</strong>.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">To update an item, click <span class="tag-edit">✏ Edit</span>, revise the details, then click <strong>Save</strong>.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">To remove an item, click <span class="tag-del">🗑 Delete</span> and confirm the action.</div></div>
         </div>
-        <div class="flow-box">
-          <div class="flow-label">Low-Stock Alert</div>
+      </div>
+      <div>
+        <div class="flow-box" style="margin-top:0;">
+          <div class="flow-label">Product Save Flow</div>
           <div class="flow-chain">
-            <div class="fn">Stock falls below threshold</div><div class="fa">→</div>
-            <div class="fn">Row turns red</div><div class="fa">→</div>
-            <div class="fn">Dashboard shows alert</div>
+            <div class="fn">Fill in details</div><div class="fa">→</div>
+            <div class="fn">Click Add / Save</div><div class="fa">→</div>
+            <div class="fn">Catalog is updated</div><div class="fa">→</div>
+            <div class="fn">New stock state appears</div>
           </div>
         </div>
-      </div>
-      <div>
-        <table class="dtable" style="margin-top:4px;">
-          <thead><tr><th>Ingredient</th><th>Stock</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>Coffee Beans</td><td>2.0 kg</td><td><span class="tag-low">⚠ Low</span></td></tr>
-            <tr><td>Fresh Milk</td><td>8.5 L</td><td><span class="tag-ok">✓ OK</span></td></tr>
-            <tr><td>Matcha Powder</td><td>0.3 kg</td><td><span class="tag-low">⚠ Low</span></td></tr>
-          </tbody>
-        </table>
-        <p class="fig-cap">Figure 6 — Ingredients with low-stock indicators</p>
+
       </div>
     </div>
+
+    <div class="note note-info" style="margin-top:10px;">
+      <div class="nicon">📌</div>
+      <div class="ntxt"><strong>Next on the following page</strong>Ingredients management, reorder workflow, and low-stock handling are shown in Section 4.2 continuation.</div>
+    </div>
+
+    <div class="div"></div>
+
 
   </div>
 
   <div class="doc-footer">
     <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 5 of 7</span>
+    <span class="df-t">Page 5 of 9</span>
   </div>
 </div>
 
 
 <!-- ═══════════════════════════════════════
-  PAGE 6 — SECTION 6 & 7: REPORTS + SETTINGS
+  PAGE 6 — SECTION 4.2: INVENTORY CONTINUATION
+═══════════════════════════════════════ -->
+<div class="page">
+  <div class="doc-header">
+    <div class="dh-left">
+      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
+      <span class="dh-name">Amari POS</span>
+    </div>
+    <span class="dh-right">User Manual v1.0</span>
+  </div>
+
+  <div class="body">
+    <div class="sec-label">Section 4 (continued)</div>
+    <div class="sec-title">Inventory Management — Ingredients</div>
+    <div class="sec-rule"></div>
+
+    <p class="txt">Ingredients tracking ensures you have enough raw materials to serve products consistently. Set minimum levels so the system can flag items before they run out.</p>
+
+    <div class="fig-frame" style="margin-top:6px;">
+      <div class="fig-bar">
+        <div class="dot" style="background:#FF5F57"></div>
+        <div class="dot" style="background:#FEBC2E"></div>
+        <div class="dot" style="background:#28C840"></div>
+        <span class="fig-url">Amari POS › Inventory › Ingredients</span>
+      </div>
+      <div style="background:#F8FAFC;padding:12px 14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <div style="font-size:10px;font-weight:700;color:#0F172A;">Ingredients</div>
+          <div style="background:#1B3FAB;color:#fff;border-radius:5px;padding:4px 8px;font-size:8px;font-weight:700;">+ Add Ingredient</div>
+        </div>
+        <table class="dtable" style="margin:0;">
+          <thead><tr><th>Ingredient</th><th>Unit</th><th>Current</th><th>Min</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Whole Milk</td><td>Liters</td><td>18</td><td>10</td><td><span class="tag-ok">OK</span></td><td><span class="tag-edit">Edit</span></td></tr>
+            <tr><td>Chocolate Syrup</td><td>Bottles</td><td>2</td><td>5</td><td><span class="tag-low">Low</span></td><td><span class="tag-edit">Edit</span></td></tr>
+            <tr><td>Vanilla Base</td><td>Kg</td><td>1</td><td>3</td><td><span class="tag-low">Low</span></td><td><span class="tag-del">Delete</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="fig-cap">Figure 6 — Ingredients view with current stock, minimum level, and status</p>
+
+    <div class="two-col" style="grid-template-columns: 360px 1fr; align-items: start; margin-top:10px;">
+      <div>
+        <div class="fig-frame" style="width: 360px; max-width: 360px;">
+          <div class="fig-bar">
+            <div class="dot" style="background:#FF5F57"></div>
+            <div class="dot" style="background:#FEBC2E"></div>
+            <div class="dot" style="background:#28C840"></div>
+            <span class="fig-url">Amari POS › Add Ingredient</span>
+          </div>
+          <div style="padding:10px 12px;background:#fff;">
+            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:6px;">Add New Ingredient</div>
+            <div style="display:grid;gap:5px;">
+              <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Ingredient name</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
+                <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Unit (kg/L/pcs)</div>
+                <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Current stock</div>
+              </div>
+              <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Minimum threshold</div>
+              <div style="background:#1B3FAB;color:#fff;border-radius:4px;padding:5px 8px;font-size:8px;font-weight:700;text-align:center;">Add Ingredient</div>
+            </div>
+          </div>
+        </div>
+        <p class="fig-cap">Figure 6.1 — Add New Ingredient form layout</p>
+      </div>
+      <div>
+        <div class="note note-info" style="margin-top:0;">
+          <div class="nicon">🧪</div>
+          <div class="ntxt"><strong>Ingredient setup note</strong>Set realistic minimum thresholds per ingredient so low-stock alerts trigger early enough for timely replenishment.</div>
+        </div>
+        <div class="note note-ok" style="margin-top:10px;">
+          <div class="nicon">✅</div>
+          <div class="ntxt"><strong>Recommended routine</strong>Review ingredient levels at opening and before closing shift to avoid next-day stockouts.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:4px;">
+      <div>
+        <div class="sub-title" style="margin-top:0;">Ingredient Workflow</div>
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="stxt">Go to <strong>Inventory</strong> and open the <strong>Ingredients</strong> tab.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Click <strong>+ Add Ingredient</strong>, then enter name, unit, quantity, and minimum level.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">Click <strong>Add Ingredient</strong> to save and include it in monitoring.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">Update quantities after each delivery to keep alerts accurate.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="flow-box" style="margin-top:0;">
+          <div class="flow-label">Stock Alert Flow</div>
+          <div class="flow-chain">
+            <div class="fn">Stock hits minimum</div><div class="fa">→</div>
+            <div class="fn">Item marked Low</div><div class="fa">→</div>
+            <div class="fn">Reorder requested</div><div class="fa">→</div>
+            <div class="fn">Inventory updated</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="doc-footer">
+    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
+    <span class="df-t">Page 6 of 9</span>
+  </div>
+</div>
+
+
+
+<!-- ═══════════════════════════════════════
+  PAGE 7 — SECTION 6 & 7: REPORTS + SETTINGS
 ═══════════════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
@@ -791,47 +926,131 @@ p.txt strong { color: #0F172A; font-weight: 600; }
             <div class="rs" style="color:#B45309;">Per transaction</div>
           </div>
         </div>
-        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:6px;padding:8px;margin-top:8px;height:44px;display:flex;align-items:flex-end;gap:4px;">
-          <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:40%;"></div>
-          <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:60%;"></div>
-          <div style="flex:1;background:#1B3FAB;border-radius:2px 2px 0 0;height:85%;"></div>
-          <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:55%;"></div>
-          <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:70%;"></div>
-          <div style="flex:1;background:#1B3FAB;border-radius:2px 2px 0 0;height:90%;"></div>
-          <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:50%;"></div>
+      </div>
+    </div>
+    <p class="fig-cap">Figure 7 — Summary cards showing total revenue, transactions, and average order value</p>
+
+    <div class="two-col" style="grid-template-columns: 360px 1fr; align-items: start; margin-top:10px;">
+      <div>
+        <div class="fig-frame" style="width: 360px; max-width: 360px;">
+          <div class="fig-bar">
+            <div class="dot" style="background:#FF5F57"></div>
+            <div class="dot" style="background:#FEBC2E"></div>
+            <div class="dot" style="background:#28C840"></div>
+            <span class="fig-url">Amari POS › Sales Chart</span>
+          </div>
+          <div style="padding:12px;background:#F8FAFC;">
+            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:8px;">Sales Overview</div>
+            <div style="height:80px;display:flex;align-items:flex-end;gap:3px;">
+              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:40%;"></div>
+              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:60%;"></div>
+              <div style="flex:1;background:#1B3FAB;border-radius:2px 2px 0 0;height:85%;"></div>
+              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:55%;"></div>
+              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:70%;"></div>
+              <div style="flex:1;background:#1B3FAB;border-radius:2px 2px 0 0;height:90%;"></div>
+              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:50%;"></div>
+            </div>
+            <div style="font-size:8px;color:#94A3B8;text-align:center;margin-top:6px;">Daily sales performance (₱)</div>
+          </div>
+        </div>
+        <p class="fig-cap">Figure 7.1 — Sales Overview chart with daily performance</p>
+      </div>
+      <div>
+        <div class="note note-info" style="margin-top:0;">
+          <div class="nicon">📊</div>
+          <div class="ntxt"><strong>Chart insights</strong>Bars show daily revenue. Colors distinguish peak days (blue) from regular days (light blue). Use the date filter above to adjust the time period.</div>
+        </div>
+        <div class="note note-tip" style="margin-top:10px;">
+          <div class="nicon">💡</div>
+          <div class="ntxt"><strong>Data interpretation</strong>Higher bars indicate better sales performance. Compare week-to-week trends to identify seasonal patterns and business cycles.</div>
         </div>
       </div>
     </div>
-    <p class="fig-cap">Figure 7 — Summary cards and revenue chart. A transaction list appears below.</p>
 
-    <div class="two-col">
+    <div class="two-col" style="grid-template-columns: 360px 1fr; align-items: start; margin-top:10px;">
       <div>
-        <div class="steps">
-          <div class="step"><div class="snum">1</div><div class="stxt">Click <strong>Reports</strong> in the sidebar.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">Use the <strong>date filter</strong> to choose daily, weekly, or monthly.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt">Click any <strong>transaction row</strong> to view its full details.</div></div>
-          <div class="step"><div class="snum">4</div><div class="stxt">Click <strong>Export</strong> → choose <strong>CSV</strong> or <strong>PDF</strong> → Download.</div></div>
-        </div>
-        <div class="flow-box">
-          <div class="flow-label">Filter Flow</div>
-          <div class="flow-chain">
-            <div class="fn">Set date range</div><div class="fa">→</div>
-            <div class="fn">System filters data</div><div class="fa">→</div>
-            <div class="fn">Cards &amp; chart update</div>
+        <div class="fig-frame" style="width: 360px; max-width: 360px;">
+          <div class="fig-bar">
+            <div class="dot" style="background:#FF5F57"></div>
+            <div class="dot" style="background:#FEBC2E"></div>
+            <div class="dot" style="background:#28C840"></div>
+            <span class="fig-url">Amari POS › Top Products</span>
           </div>
+          <div style="padding:12px;background:#fff;">
+            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:8px;">Top Selling Products</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;padding:5px;border:1px solid #E2E8F0;border-radius:4px;">
+                <div style="width:24px;height:24px;background:#1B3FAB;color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;">1</div>
+                <div style="flex:1;">
+                  <div style="font-size:8.5px;font-weight:600;color:#0F172A;">Caramel Latte Frappe</div>
+                  <div style="font-size:8px;color:#94A3B8;">6 units sold</div>
+                </div>
+                <div style="font-size:8.5px;font-weight:700;color:#0D7A6E;">₱294.00</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px;border:1px solid #E2E8F0;border-radius:4px;">
+                <div style="width:24px;height:24px;background:#0D7A6E;color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;">2</div>
+                <div style="flex:1;">
+                  <div style="font-size:8.5px;font-weight:600;color:#0F172A;">Caramel Macchiato</div>
+                  <div style="font-size:8px;color:#94A3B8;">5 units sold</div>
+                </div>
+                <div style="font-size:8.5px;font-weight:700;color:#0D7A6E;">₱245.00</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px;border:1px solid #E2E8F0;border-radius:4px;">
+                <div style="width:24px;height:24px;background:#6B7280;color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;">3</div>
+                <div style="flex:1;">
+                  <div style="font-size:8.5px;font-weight:600;color:#0F172A;">Blue Lemonade</div>
+                  <div style="font-size:8px;color:#94A3B8;">5 units sold</div>
+                </div>
+                <div style="font-size:8.5px;font-weight:700;color:#0D7A6E;">₱245.00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="fig-cap">Figure 7.2 — Top Selling Products ranked by units and revenue</p>
+      </div>
+      <div>
+        <div class="note note-ok" style="margin-top:0;">
+          <div class="nicon">🏆</div>
+          <div class="ntxt"><strong>Best performers</strong>Top three products drive majority of revenue. Track these closely to identify which items maintain customer loyalty and seasonal demand.</div>
+        </div>
+        <div class="note note-info" style="margin-top:10px;">
+          <div class="nicon">📈</div>
+          <div class="ntxt"><strong>Strategic insight</strong>Use this data to stock sufficient inventory for top sellers and cross-sell complementary items. Update pricing based on demand trends.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:4px;">
+      <div>
+        <div class="sub-title" style="margin-top:0;">Viewing &amp; Filtering Reports</div>
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="stxt">Click <strong>Reports</strong> in the sidebar to access the dashboard.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Use the <strong>date filter</strong> to select daily, weekly, or monthly view.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">Review the <strong>summary cards</strong> for quick metrics and trends.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">Analyze the <strong>chart</strong> to identify patterns and peak sales periods.</div></div>
         </div>
       </div>
       <div>
-        <div class="sub-title" style="margin-top:0;">Exporting a Report</div>
-        <div style="border:1.5px solid #E2E8F0;border-radius:8px;padding:14px;background:#fff;margin-top:4px;">
-          <div style="font-size:11px;font-weight:700;color:#0F172A;margin-bottom:10px;">Export Report</div>
-          <div style="display:flex;gap:6px;margin-bottom:10px;">
-            <div style="flex:1;border:2px solid #1B3FAB;border-radius:5px;padding:6px;text-align:center;font-size:9px;font-weight:600;color:#1B3FAB;">📊 CSV</div>
-            <div style="flex:1;border:1px solid #E2E8F0;border-radius:5px;padding:6px;text-align:center;font-size:9px;color:#94A3B8;">📄 PDF</div>
+        <div class="flow-box" style="margin-top:0;">
+          <div class="flow-label">Report Analysis Flow</div>
+          <div class="flow-chain">
+            <div class="fn">Filter by date</div><div class="fa">→</div>
+            <div class="fn">View summary cards</div><div class="fa">→</div>
+            <div class="fn">Analyze chart data</div><div class="fa">→</div>
+            <div class="fn">Review top products</div>
           </div>
-          <div style="background:#1B3FAB;color:#fff;border-radius:5px;padding:6px;text-align:center;font-size:9px;font-weight:700;">↓ Download File</div>
         </div>
-        <p class="fig-cap">Figure 8 — Export dialog with format and date range options</p>
+
+      </div>
+    </div>
+
+    <div class="sub-title" style="margin-top:14px;">Daily Export</div>
+    <div style="border:1.5px solid #E2E8F0;border-radius:8px;padding:14px;background:#fff;max-width:500px;">
+      <p class="txt" style="margin-bottom:12px;font-size:11.5px;">Click the button below to automatically export today's sales data as a CSV file. The system captures all transactions from the current day with complete details.</p>
+      <div style="background:#E0E7FF;color:#1B3FAB;border-radius:5px;padding:8px 12px;text-align:center;font-size:9.5px;font-weight:700;cursor:pointer;border:2px solid #1B3FAB;">📊 Export Today's Sales</div>
+      <div class="note note-info" style="margin-top:10px;padding:10px 12px;">
+        <div class="nicon" style="font-size:13px;">ℹ️</div>
+        <div class="ntxt" style="font-size:11px;"><strong>Auto-export</strong>The file includes all transactions, stock adjustments, and adjustments for today's date.</div>
       </div>
     </div>
 
@@ -839,7 +1058,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
 
     <div class="sec-label">Section 6</div>
     <div class="sec-title">Settings</div>
-    <div class="sec-rule"></div>
+    <div class="sec-rule"></div>a
 
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
       <div>
@@ -878,13 +1097,13 @@ p.txt strong { color: #0F172A; font-weight: 600; }
 
   <div class="doc-footer">
     <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 6 of 7</span>
+    <span class="df-t">Page 6 of 9</span>
   </div>
 </div>
 
 
 <!-- ═══════════════════════════════════════
-  PAGE 7 — SECTION 8 & 9: FAQ + LOGOUT
+  PAGE 7 — SECTION 6 SETTINGS & SECTION 7: LOGOUT
 ═══════════════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
@@ -897,7 +1116,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
 
   <div class="body">
 
-    <div class="sec-label">Section 8</div>
+    <div class="sec-label">Section 7</div>
     <div class="sec-title">Logging Out</div>
     <div class="sec-rule"></div>
 
@@ -943,11 +1162,34 @@ p.txt strong { color: #0F172A; font-weight: 600; }
             <div class="sb-content">Main content area</div>
           </div>
         </div>
-        <p class="fig-cap">Figure 9 — Logout button always visible at sidebar bottom</p>
+        <p class="fig-cap">Figure 8 — Logout button always visible at sidebar bottom</p>
       </div>
     </div>
 
-        <div class="sec-label">Section 7</div>
+  </div>
+
+  <div class="doc-footer">
+    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
+    <span class="df-t">Page 7 of 9</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+  PAGE 8 — SECTION 8: FAQ & TROUBLESHOOTING
+═══════════════════════════════════════ -->
+<div class="page">
+  <div class="doc-header">
+    <div class="dh-left">
+      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
+      <span class="dh-name">Amari POS</span>
+    </div>
+    <span class="dh-right">User Manual v1.0</span>
+  </div>
+
+  <div class="body">
+
+    <div class="sec-label">Section 8</div>
     <div class="sec-title">Troubleshooting &amp; Common Questions</div>
     <div class="sec-rule"></div>
 
@@ -988,7 +1230,7 @@ p.txt strong { color: #0F172A; font-weight: 600; }
 
   <div class="doc-footer">
     <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 7 of 7</span>
+    <span class="df-t">Page 8 of 9</span>
   </div>
 </div>
 
