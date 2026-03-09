@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=768, initial-scale=1.0">
 <title>Amari POS & Inventory System — User Manual</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -16,291 +16,367 @@ body {
   line-height: 1.6;
 }
 
+/* ─── PAGE: strict 8×13 inches ────────── */
 .page {
-  width: 816px;
-  min-height: 1248px;
+  width: 768px;       /* 8in × 96dpi */
+  height: 1248px;     /* 13in × 96dpi */
   background: #fff;
   margin: 20px auto;
   position: relative;
   overflow: hidden;
   box-shadow: 0 2px 20px rgba(0,0,0,0.18);
   page-break-after: always;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ─── SHARED HEADER ─────── */
+/* ─── HEADER ─────── */
 .doc-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 52px 12px;
+  padding: 14px 48px 12px;
   border-bottom: 1.5px solid #E2E8F0;
+  flex-shrink: 0;
 }
 .dh-left { display: flex; align-items: center; gap: 10px; }
-.dh-icon { width: 30px; height: 30px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.dh-icon img { width: 100%; height: 100%; object-fit: contain; }
-.dh-name { font-size: 13px; font-weight: 700; color: #1B3FAB; }
+.dh-icon { width: 28px; height: 28px; border-radius: 50%; background: #EFF6FF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+.dh-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.dh-name { font-size: 12px; font-weight: 700; color: #1B3FAB; }
 .dh-right { font-size: 10px; color: #94A3B8; font-family: 'JetBrains Mono', monospace; }
 
-/* ─── SHARED FOOTER ─────── */
+/* ─── FOOTER ─────── */
 .doc-footer {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  padding: 10px 52px;
+  padding: 9px 48px;
   border-top: 1px solid #E2E8F0;
   display: flex;
   justify-content: space-between;
   background: #F8FAFC;
+  flex-shrink: 0;
 }
-.df-t { font-size: 10px; color: #94A3B8; }
+.df-t { font-size: 9.5px; color: #94A3B8; }
 
-/* ─── BODY AREA ─────────── */
-.body { padding: 32px 52px 80px; }
+/* ─── BODY ─────────── */
+.body { padding: 24px 48px 72px; flex: 1; overflow: hidden; }
 
-/* ─── SECTION LABEL ─────── */
-.sec-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1.8px; text-transform: uppercase; color: #1B3FAB; margin-bottom: 4px; }
-.sec-title { font-size: 20px; font-weight: 800; color: #0F172A; letter-spacing: -0.5px; margin-bottom: 6px; }
-.sec-rule { height: 2px; background: linear-gradient(90deg, #1B3FAB 0%, #C7D2FE 55%, transparent 100%); border-radius: 2px; margin-bottom: 18px; }
-.sub-title { font-size: 13px; font-weight: 700; color: #0F172A; margin: 18px 0 8px; }
-.sub-title:first-child { margin-top: 0; }
+/* ─── SECTION LABELS ─── */
+.sec-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1.8px; text-transform: uppercase; color: #1B3FAB; margin-bottom: 3px; }
+.sec-title { font-size: 18px; font-weight: 800; color: #0F172A; letter-spacing: -0.5px; margin-bottom: 5px; }
+.sec-rule { height: 2px; background: linear-gradient(90deg, #1B3FAB 0%, #C7D2FE 55%, transparent 100%); border-radius: 2px; margin-bottom: 14px; }
+.sub-title { font-size: 12px; font-weight: 700; color: #0F172A; margin: 14px 0 7px; }
 
-/* ─── BODY TEXT ─────────── */
-p.txt { font-size: 12.5px; color: #374151; line-height: 1.7; margin-bottom: 10px; }
-p.txt a { color: #1B3FAB; }
+/* ─── TEXT ─── */
+p.txt { font-size: 12px; color: #374151; line-height: 1.65; margin-bottom: 9px; }
 p.txt strong { color: #0F172A; font-weight: 600; }
 
-/* ─── STEPS ─────────────── */
-.steps { margin: 10px 0 14px; }
-.step { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 7px; }
-.snum { width: 21px; height: 21px; min-width: 21px; background: #1B3FAB; color: #fff; border-radius: 5px; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; flex-shrink: 0; }
+/* ─── STEPS ─── */
+.steps { margin: 8px 0 12px; }
+.step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+.snum { width: 20px; height: 20px; min-width: 20px; background: #1B3FAB; color: #fff; border-radius: 5px; font-size: 9.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; flex-shrink: 0; }
 .snum.red { background: #B91C1C; }
-.stxt { font-size: 12.5px; color: #374151; line-height: 1.65; }
+.stxt { font-size: 12px; color: #374151; line-height: 1.6; }
 .stxt strong { color: #0F172A; font-weight: 600; }
 
-/* ─── BULLETS ────────────── */
-.blist { list-style: none; margin: 8px 0 12px; }
-.blist li { position: relative; padding: 3px 0 3px 18px; font-size: 12.5px; color: #374151; line-height: 1.65; }
-.blist li::before { content: '▸'; position: absolute; left: 2px; color: #1B3FAB; font-size: 9px; top: 6px; }
+/* ─── BULLETS ─── */
+.blist { list-style: none; margin: 6px 0 10px; }
+.blist li { position: relative; padding: 2px 0 2px 17px; font-size: 12px; color: #374151; line-height: 1.6; }
+.blist li::before { content: '▸'; position: absolute; left: 1px; color: #1B3FAB; font-size: 9px; top: 5px; }
 .blist li strong { color: #0F172A; font-weight: 600; }
 
-/* ─── FLOW BOX ───────────── */
-.flow-box { border-left: 3px solid #0D7A6E; background: #F0FDF4; border-radius: 0 8px 8px 0; padding: 11px 16px; margin: 14px 0; }
-.flow-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; text-transform: uppercase; color: #0D7A6E; margin-bottom: 7px; }
+/* ─── FLOW BOX ─── */
+.flow-box { border-left: 3px solid #0D7A6E; background: #F0FDF4; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+.flow-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; text-transform: uppercase; color: #0D7A6E; margin-bottom: 6px; }
 .flow-chain { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
-.fn { background: #fff; border: 1px solid #BBF7D0; border-radius: 5px; padding: 3px 9px; font-size: 10.5px; color: #0F172A; font-weight: 500; }
+.fn { background: #fff; border: 1px solid #BBF7D0; border-radius: 5px; padding: 3px 9px; font-size: 10px; color: #0F172A; font-weight: 500; }
 .fa { font-size: 10px; color: #6EE7B7; }
 
-/* ─── NOTE BOXES ─────────── */
-.note { display: flex; gap: 11px; align-items: flex-start; border-radius: 8px; padding: 11px 14px; margin: 10px 0; }
-.nicon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
-.ntxt { font-size: 12px; color: inherit; line-height: 1.65; }
-.ntxt strong { display: block; font-size: 11px; font-weight: 700; margin-bottom: 1px; }
+/* ─── NOTE BOXES ─── */
+.note { display: flex; gap: 10px; align-items: flex-start; border-radius: 7px; padding: 10px 12px; margin: 8px 0; }
+.nicon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.ntxt { font-size: 11.5px; color: inherit; line-height: 1.6; }
+.ntxt strong { display: block; font-size: 10.5px; font-weight: 700; margin-bottom: 1px; }
 .note-info  { background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF; }
 .note-warn  { background: #FEF2F2; border: 1px solid #FECACA; color: #991B1B; }
 .note-ok    { background: #F0FDF4; border: 1px solid #BBF7D0; color: #14532D; }
 .note-tip   { background: #FFFBEB; border: 1px solid #FDE68A; color: #78350F; }
 
-/* ─── TWO COLUMN ─────────── */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 10px 0; }
+/* ─── TWO COLUMN ─── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 8px 0; }
 
-/* ─── DIVIDER ────────────── */
-.div { height: 1px; background: #E2E8F0; margin: 20px 0; }
+/* ─── DIVIDER ─── */
+.div { height: 1px; background: #E2E8F0; margin: 16px 0; }
 
-/* ─── TABLES ─────────────── */
-.dtable { width: 100%; border-collapse: collapse; font-size: 11.5px; border-radius: 8px; overflow: hidden; border: 1.5px solid #E2E8F0; margin: 8px 0; }
-.dtable th { background: #0F172A; color: #fff; padding: 8px 12px; text-align: left; font-size: 10.5px; font-weight: 600; }
-.dtable td { padding: 7px 12px; border-bottom: 1px solid #E2E8F0; color: #374151; vertical-align: middle; }
+/* ─── TABLES ─── */
+.dtable { width: 100%; border-collapse: collapse; font-size: 11px; border-radius: 8px; overflow: hidden; border: 1.5px solid #E2E8F0; margin: 7px 0; }
+.dtable th { background: #0F172A; color: #fff; padding: 7px 11px; text-align: left; font-size: 10px; font-weight: 600; }
+.dtable td { padding: 6px 11px; border-bottom: 1px solid #E2E8F0; color: #374151; vertical-align: middle; }
 .dtable tr:last-child td { border-bottom: none; }
 .dtable tr:nth-child(even) td { background: #F8FAFC; }
 
 /* role pills */
-.rp { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 9.5px; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+.rp { display: inline-block; padding: 2px 7px; border-radius: 20px; font-size: 9px; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
 .rp-o { background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
 .rp-m { background: #DCFCE7; color: #14532D; border: 1px solid #86EFAC; }
 .rp-c { background: #DBEAFE; color: #1E3A8A; border: 1px solid #93C5FD; }
 
 /* status tags */
-.tag-edit { background: #DCFCE7; color: #14532D; border-radius: 3px; padding: 1px 7px; font-size: 9.5px; font-weight: 600; }
-.tag-del  { background: #FEE2E2; color: #991B1B; border-radius: 3px; padding: 1px 7px; font-size: 9.5px; font-weight: 600; }
-.tag-low  { background: #FEE2E2; color: #991B1B; border-radius: 3px; padding: 2px 8px; font-size: 9.5px; font-weight: 700; }
-.tag-ok   { background: #DCFCE7; color: #14532D; border-radius: 3px; padding: 2px 8px; font-size: 9.5px; font-weight: 700; }
+.tag-edit { background: #DCFCE7; color: #14532D; border-radius: 3px; padding: 1px 6px; font-size: 9px; font-weight: 600; }
+.tag-del  { background: #FEE2E2; color: #991B1B; border-radius: 3px; padding: 1px 6px; font-size: 9px; font-weight: 600; }
+.tag-low  { background: #FEE2E2; color: #991B1B; border-radius: 3px; padding: 1px 7px; font-size: 9px; font-weight: 700; }
+.tag-ok   { background: #DCFCE7; color: #14532D; border-radius: 3px; padding: 1px 7px; font-size: 9px; font-weight: 700; }
 
-/* ─── FIGURE FRAME ───────── */
-.fig-wrap { margin: 12px 0 4px; }
-.fig-frame { border: 1.5px solid #E2E8F0; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
-.fig-bar { background: #1E293B; padding: 7px 12px; display: flex; align-items: center; gap: 5px; }
-.dot { width: 8px; height: 8px; border-radius: 50%; }
-.fig-url { margin-left: 8px; font-size: 9px; color: rgba(255,255,255,0.3); font-family: 'JetBrains Mono', monospace; }
-.fig-body { padding: 14px 18px; }
-.fig-cap { font-size: 10px; color: #94A3B8; font-style: italic; text-align: center; margin-top: 5px; margin-bottom: 14px; }
+/* ─── FIGURE FRAMES ─── */
+.fig-wrap { margin: 10px 0 4px; }
+.fig-frame { border: 1.5px solid #E2E8F0; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+.fig-bar { background: #1E293B; padding: 6px 10px; display: flex; align-items: center; gap: 5px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; }
+.fig-url { margin-left: 7px; font-size: 8.5px; color: rgba(255,255,255,0.3); font-family: 'JetBrains Mono', monospace; }
+.fig-body { padding: 12px 16px; }
+.fig-cap { font-size: 9.5px; color: #94A3B8; font-style: italic; text-align: center; margin-top: 4px; margin-bottom: 10px; }
 
-/* ─── COVER ──────────────── */
-.cover-banner { background: #1B3FAB; padding: 52px 52px 40px; position: relative; overflow: hidden; }
+/* ─── COVER ─── */
+.cover-banner { background: #1B3FAB; padding: 44px 48px 36px; position: relative; overflow: hidden; flex-shrink: 0; }
 .cover-banner::after { content: ''; position: absolute; bottom: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.04); border-radius: 50%; }
 .cover-banner::before { content: ''; position: absolute; top: -80px; right: 40px; width: 280px; height: 280px; background: rgba(255,255,255,0.03); border-radius: 50%; }
-.cb-logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 36px; }
-.cb-logo-box { width: 40px; height: 40px; background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.25); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-.cb-logo-name { font-size: 17px; font-weight: 800; color: #fff; }
-.cb-title { font-size: 36px; font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 10px; }
+.cb-logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; position: relative; z-index: 1; }
+.cb-logo-box { width: 36px; height: 36px; background: #fff; border: 1.5px solid rgba(255,255,255,0.25); border-radius: 9px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.cb-logo-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 7px; }
+.cb-logo-name { font-size: 15px; font-weight: 800; color: #fff; }
+.cb-title { font-size: 30px; font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 8px; position: relative; z-index: 1; }
 .cb-title span { color: #93C5FD; }
-.cb-sub { font-size: 13px; color: rgba(255,255,255,0.55); max-width: 400px; line-height: 1.6; }
-.cb-pills { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
-.cb-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 10px; color: rgba(255,255,255,0.75); font-family: 'JetBrains Mono', monospace; }
+.cb-sub { font-size: 12px; color: rgba(255,255,255,0.55); max-width: 400px; line-height: 1.6; position: relative; z-index: 1; }
+.cb-pills { display: flex; gap: 8px; margin-top: 22px; flex-wrap: wrap; position: relative; z-index: 1; }
+.cb-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 3px 11px; font-size: 9.5px; color: rgba(255,255,255,0.75); font-family: 'JetBrains Mono', monospace; }
 
-/* ─── POS MOCK ───────────── */
-.pos-wrap { display: grid; grid-template-columns: 1fr 185px; }
-.pos-grid { padding: 10px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; border-right: 1px solid #E2E8F0; }
-.pcard { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 8px 6px; text-align: center; }
-.pcard.sel { background: #1B3FAB; border-color: #1B3FAB; }
-.pcard em { font-style: normal; font-size: 18px; display: block; margin-bottom: 3px; }
-.pcard .pn { font-size: 8.5px; color: #0F172A; font-weight: 500; }
-.pcard.sel .pn { color: #fff; }
-.pcard .pp { font-size: 8.5px; color: #0D7A6E; font-family: 'JetBrains Mono', monospace; margin-top: 1px; }
-.pcard.sel .pp { color: #A5F3E8; }
-.pos-cart { padding: 10px; }
-.ct-title { font-size: 9.5px; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
-.ct-row { display: flex; justify-content: space-between; font-size: 8.5px; color: #6B7280; padding: 3px 0; border-bottom: 1px solid #F1F5F9; }
-.ct-total { background: #1B3FAB; color: #fff; border-radius: 5px; padding: 6px 8px; text-align: center; font-size: 8.5px; font-weight: 700; margin-top: 7px; cursor: pointer; }
-.pos-topbar { background: #0F172A; padding: 7px 12px; display: flex; justify-content: space-between; align-items: center; }
-.pos-topbar span { font-size: 9.5px; color: rgba(255,255,255,0.8); font-weight: 600; }
-.pos-search { background: rgba(255,255,255,0.08); border-radius: 4px; padding: 3px 10px; font-size: 8.5px; color: rgba(255,255,255,0.35); font-style: italic; }
-
-/* ─── SIDEBAR MOCK ───────── */
+/* ─── SIDEBAR MOCK ─── */
 .sb-mock { display: flex; }
-.sb { width: 115px; background: #0F172A; padding: 10px 8px; display: flex; flex-direction: column; justify-content: space-between; min-height: 160px; }
+.sb { width: 110px; background: #0F172A; padding: 9px 7px; display: flex; flex-direction: column; justify-content: space-between; min-height: 150px; }
 .sb-nav { display: flex; flex-direction: column; gap: 2px; }
-.sb-item { padding: 4px 8px; border-radius: 4px; font-size: 8.5px; color: rgba(255,255,255,0.4); }
+.sb-item { padding: 4px 7px; border-radius: 4px; font-size: 8px; color: rgba(255,255,255,0.4); }
 .sb-item.act { background: #1B3FAB; color: #fff; font-weight: 600; }
-.sb-logout { background: #B91C1C; color: #fff; border-radius: 4px; padding: 5px 8px; font-size: 8.5px; font-weight: 600; text-align: center; }
-.sb-content { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #94A3B8; font-style: italic; padding: 10px; }
+.sb-logout { background: #B91C1C; color: #fff; border-radius: 4px; padding: 4px 7px; font-size: 8px; font-weight: 600; text-align: center; }
+.sb-content { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 8.5px; color: #94A3B8; font-style: italic; padding: 10px; }
 
-/* ─── REPORT CARDS ───────── */
-.rcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.rcard { border-radius: 8px; padding: 12px 14px; }
+/* ─── REPORT CARDS ─── */
+.rcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.rcard { border-radius: 8px; padding: 10px 12px; }
 .rcard .rl { font-size: 7.5px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; margin-bottom: 4px; }
-.rcard .rv { font-size: 20px; font-weight: 800; }
-.rcard .rs { font-size: 8.5px; margin-top: 2px; }
+.rcard .rv { font-size: 18px; font-weight: 800; }
+.rcard .rs { font-size: 8px; margin-top: 2px; }
 
-/* ─── FAQ ────────────────── */
+/* ─── FAQ ─── */
 .faq { border: 1.5px solid #E2E8F0; border-radius: 10px; overflow: hidden; margin: 10px 0; }
 .faq-item { border-bottom: 1px solid #E2E8F0; }
 .faq-item:last-child { border-bottom: none; }
-.faq-q { display: flex; gap: 10px; align-items: flex-start; padding: 10px 16px; background: #F8FAFC; font-size: 12.5px; font-weight: 600; color: #0F172A; }
-.fqm { background: #1B3FAB; color: #fff; width: 18px; height: 18px; min-width: 18px; border-radius: 4px; font-size: 9.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; flex-shrink: 0; }
-.faq-a { padding: 8px 16px 11px 44px; font-size: 12px; color: #374151; line-height: 1.7; }
+.faq-q { display: flex; gap: 9px; align-items: flex-start; padding: 9px 14px; background: #F8FAFC; font-size: 12px; font-weight: 600; color: #0F172A; }
+.fqm { background: #1B3FAB; color: #fff; width: 17px; height: 17px; min-width: 17px; border-radius: 4px; font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; flex-shrink: 0; }
+.faq-a { padding: 7px 14px 10px 40px; font-size: 11.5px; color: #374151; line-height: 1.65; }
 
-/* ─── DOWNLOAD BUTTON ────── */
-.dl-btn { position: fixed; top: 20px; right: 24px; z-index: 9999; background: #1B3FAB; color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(27,63,171,0.35); transition: background 0.2s; }
+/* ─── NORMAN MODEL BOX ─── */
+.norman { border: 1.5px solid #1B3FAB; border-radius: 9px; overflow: hidden; margin: 10px 0 12px; }
+.norman-header { background: #1B3FAB; padding: 6px 12px; display: flex; align-items: center; gap: 8px; }
+.norman-header span { font-size: 8.5px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.9); font-weight: 700; }
+.norman-header em { font-style: normal; font-size: 11px; }
+.norman-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.norman-cell { padding: 8px 10px; border-right: 1px solid #E0E7FF; background: #F5F8FF; }
+.norman-cell:last-child { border-right: none; }
+.norman-cell .nc-label { font-size: 7px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; text-transform: uppercase; color: #1B3FAB; font-weight: 700; margin-bottom: 3px; display: flex; align-items: center; gap: 3px; }
+.norman-cell .nc-icon { font-size: 9px; }
+.norman-cell .nc-val { font-size: 10px; color: #1E293B; line-height: 1.45; }
+
+/* ─── FRAMEWORK BOX ─── */
+.fw-box { background: #EFF6FF; border: 1.5px solid #BFDBFE; border-radius: 9px; padding: 11px 14px; margin: 8px 0 5px; }
+.fw-title { font-size: 9.5px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1.5px; text-transform: uppercase; color: #1B3FAB; font-weight: 700; margin-bottom: 5px; }
+.fw-chain { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 5px; }
+.fw-node { background: #1B3FAB; color: #fff; border-radius: 6px; padding: 3px 10px; font-size: 9.5px; font-weight: 600; }
+.fw-arr { color: #93C5FD; font-size: 12px; font-weight: 700; }
+.fw-desc { font-size: 10.5px; color: #1E40AF; line-height: 1.55; }
+
+/* ─── DOWNLOAD BUTTON ─── */
+.dl-btn { position: fixed; top: 20px; right: 24px; z-index: 9999; background: #1B3FAB; color: #fff; border: none; border-radius: 8px; padding: 9px 18px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 7px; box-shadow: 0 4px 14px rgba(27,63,171,0.35); transition: background 0.2s; }
 .dl-btn:hover { background: #16338B; }
-.dl-btn svg { width: 16px; height: 16px; }
+.dl-btn svg { width: 15px; height: 15px; }
 
+/* ─── PRINT / PDF RULES ─── */
 @media print {
-  @page { size: 8.5in 13in; margin: 0; }
-  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  html, body { width: 816px; height: auto; margin: 0 !important; padding: 0 !important; background: white !important; }
-  .page { width: 816px !important; height: 1248px !important; min-height: 1248px !important; max-height: 1248px !important; margin: 0 !important; padding-top: 0; box-shadow: none !important; page-break-after: always !important; page-break-inside: avoid !important; overflow: hidden !important; position: relative !important; }
-  .page:last-child { page-break-after: auto !important; }
+  @page {
+    size: 8in 13in;
+    margin: 0;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html {
+    width: 8in;
+    height: auto;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  body {
+    width: 8in !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    /* Scale the 768px design to exactly 8in = 768px at 96dpi.
+       Most print engines use 96dpi, so 1px = 1/96 in.
+       768px = exactly 8in. If the browser uses a different dpi,
+       the transform below corrects it. */
+    transform-origin: top left;
+  }
+
+  .page {
+    width: 8in !important;
+    height: 13in !important;
+    min-height: 13in !important;
+    max-height: 13in !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    overflow: hidden !important;
+    position: relative !important;
+    /* Scale from 768px screen width to 8in print width */
+    transform: scale(calc(8in / 768px));
+    transform-origin: top left;
+  }
+
+  .page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
   .dl-btn { display: none !important; }
+  div[style*="position:fixed"] { display: none !important; }
 }
 </style>
 </head>
 <body>
 
-
-<!-- ═══════════════════════════════════════
-  PAGE 1 — COVER + OVERVIEW + MODULES + ROLES
-═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════
+  PAGE 1 — COVER + OVERVIEW
+═══════════════════════════════ -->
 <div class="page">
   <div class="cover-banner">
     <div class="cb-logo-row">
-      <div class="cb-logo-box" style="border-radius:50%;overflow:hidden;padding:0;">
-        <img src="/amari-blue-logo.png" alt="Amari Logo" style="width:100%;height:100%;object-fit:contain;">
-      </div>
+      <div class="cb-logo-box"><img src="amari-blue-logo.png" alt="Amari Logo"></div>
       <span class="cb-logo-name">Amari's Scoops &amp; Savours</span>
     </div>
     <div class="cb-title">Point of Sale &amp;<br><span>Inventory Management</span><br>System</div>
-    <p class="cb-sub">A step-by-step guide for owners, managers, and cashiers on daily operations, stock management, and sales reporting.</p>
+    <p class="cb-sub">A comprehensive user manual for owners, managers, and cashiers — covering daily operations, inventory control, and sales reporting.</p>
     <div class="cb-pills">
       <span class="cb-pill">Version 1.0</span>
-      <span class="cb-pill">March 2, 2026</span>
+      <span class="cb-pill">March 2026</span>
+      <span class="cb-pill">For Internal Use</span>
     </div>
   </div>
 
-  <div class="body" style="padding-top: 24px;">
+  <div class="body" style="padding-top:20px;">
 
-    <!-- Overview -->
     <div class="sec-label">Overview</div>
-    <div class="sec-title">About This System</div>
+    <div class="sec-title">About This Manual</div>
     <div class="sec-rule"></div>
 
-    <p class="txt"><strong>Amari POS &amp; Inventory Management System</strong> is a secure, role-based platform for point-of-sale operations and inventory management. Each staff member logs in with a personal username and password. Access is controlled by role — what you can see and do depends on whether you are an Owner, Manager, or Cashier.</p>
+    <p class="txt">This manual guides you through the <strong>Amari POS &amp; Inventory Management System</strong> — a role-based platform designed for efficient point-of-sale transactions and real-time inventory tracking. Each section follows a structured approach to help you understand not just <em>how</em> to use the system, but <em>why</em> each interaction works the way it does.</p>
 
-    <!-- Main Modules -->
-    <div class="sec-title">Main Modules</div>
-    <table class="dtable" style="margin-bottom:18px;">
-      <thead>
-        <tr><th>Module</th><th>Description</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Dashboard</strong></td><td>A quick snapshot of today's sales and alerts.</td></tr>
-        <tr><td><strong>POS</strong></td><td>The sales counter where transactions are processed.</td></tr>
-        <tr><td><strong>Inventory</strong></td><td>Manage products and ingredients.</td></tr>
-        <tr><td><strong>Reports</strong></td><td>View charts, summaries, and transaction history.</td></tr>
-        <tr><td><strong>Settings</strong></td><td>Configure users, tax, receipts, and appearance.</td></tr>
-      </tbody>
-    </table>
-
-    <div class="div"></div>
-
-    <div class="sec-title">Sidebar Navigation</div>
-    <p class="txt">Navigate between modules using the <strong>sidebar</strong> on the left side of every screen. The active module is highlighted so you always know where you are.</p>
-
-    <div class="two-col">
+    <div class="two-col" style="margin-top:16px;">
       <div>
-        <div class="fig-frame" style="margin-top:4px;">
+        <div class="sub-title" style="margin-top:0;">System Modules</div>
+        <table class="dtable">
+          <thead><tr><th>Module</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Dashboard</strong></td><td>Real-time overview of today's sales, transactions, and low stock alerts.</td></tr>
+            <tr><td><strong>POS</strong></td><td>Process customer transactions with cart, payment, and receipt generation.</td></tr>
+            <tr><td><strong>Inventory</strong></td><td>Manage products and ingredients — add, edit, delete, and monitor stock.</td></tr>
+            <tr><td><strong>Reports</strong></td><td>View sales summaries, charts, and export transaction history.</td></tr>
+            <tr><td><strong>Settings</strong></td><td>Configure users, VAT rate, receipt info, and theme preferences.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="sub-title" style="margin-top:0;">User Roles &amp; Access</div>
+        <table class="dtable">
+          <thead><tr><th>Role</th><th>Access Level</th></tr></thead>
+          <tbody>
+            <tr><td><span class="rp rp-o">Owner</span></td><td>Full access — all modules including user management.</td></tr>
+            <tr><td><span class="rp rp-m">Manager</span></td><td>Dashboard, POS, Inventory, Reports. No user management.</td></tr>
+            <tr><td><span class="rp rp-c">Cashier</span></td><td>Dashboard (limited) and POS only. No Inventory or Reports.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="note note-tip" style="margin-top:10px;">
+          <div class="nicon">💡</div>
+          <div class="ntxt"><strong>Before you begin</strong> Ensure you have received your login credentials from the system administrator. Each role has specific permissions designed to match job responsibilities.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-title">Navigation</div>
+    <p class="txt">The sidebar on the left provides access to all modules. The currently active module is highlighted in blue. Click any menu item to switch instantly. The <strong>Logout</strong> button is always visible at the bottom of the sidebar.</p>
+
+    <div class="two-col" style="margin-top:10px;">
+      <div>
+        <div class="fig-frame">
           <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div></div>
-          <div class="sb-mock" style="min-height:180px;">
-            <div class="sb">
+          <div class="sb-mock" style="min-height:140px;">
+            <div class="sb" style="min-height:140px;">
               <div class="sb-nav">
-                <div class="sb-item act">⬡ Dashboard</div>
+                <div class="sb-item act">📊 Dashboard</div>
                 <div class="sb-item">🛒 POS</div>
                 <div class="sb-item">📦 Inventory</div>
-                <div class="sb-item">📊 Reports</div>
+                <div class="sb-item">📈 Reports</div>
                 <div class="sb-item">⚙️ Settings</div>
               </div>
-              <div class="sb-logout">⏻ Sign out</div>
+              <div class="sb-logout">⏻ Logout</div>
             </div>
             <div class="sb-content">Main content area</div>
           </div>
         </div>
         <p class="fig-cap">Figure 1 — Sidebar with Dashboard active</p>
       </div>
-      <div style="padding-top:4px;">
-        <ul class="blist" style="margin:0;">
-          <li>The <strong>highlighted item</strong> (blue) shows your current module.</li>
-          <li>Click any item to switch modules instantly.</li>
-          <li>The <strong>Sign out</strong> button is always visible at the bottom of the sidebar.</li>
+      <div>
+        <ul class="blist" style="margin-top:10px;">
+          <li>Highlighted item <strong>(Blue)</strong> shows your current module.</li>
+          <li>Click any item to switch instantly.</li>
+          <li>Logout button always visible at bottom.</li>
         </ul>
+                <div class="flow-box" style="margin:0;">
+          <div class="flow-label">Overall System Workflow</div>
+          <div class="flow-chain">
+            <div class="fn">Login</div><div class="fa">→</div>
+            <div class="fn">Check Dashboard</div><div class="fa">→</div>
+            <div class="fn">Process Sales (POS)</div><div class="fa">→</div>
+            <div class="fn">Review Reports</div><div class="fa">→</div>
+            <div class="fn">Logout</div>
+          </div>
+        </div>
       </div>
     </div>
 
   </div>
 
   <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 1 of 9</span>
+    <span class="df-t">Amari POS &amp; Inventory Management System</span>
+    <span class="df-t">Page 1 of 7</span>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════
-  PAGE 2 — SECTION 1: ACCESSING THE PLATFORM
-═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════
+  PAGE 2 — LOGIN
+═══════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
-    <div class="dh-left">
-      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
-      <span class="dh-name">Amari POS</span>
-    </div>
+    <div class="dh-left"><div class="dh-icon"><img src="amari-blue-logo.png" alt="Amari Logo"></div><span class="dh-name">Amari POS</span></div>
     <span class="dh-right">User Manual v1.0</span>
   </div>
 
@@ -310,120 +386,94 @@ p.txt strong { color: #0F172A; font-weight: 600; }
     <div class="sec-title">Accessing the Platform</div>
     <div class="sec-rule"></div>
 
-    <p class="txt">To get started, visit <strong>https://amari-pos-with-inventory-management.vercel.app/</strong> in any web browser or open the desktop application. The login page appears where you will enter your credentials.</p>
+    <p class="txt">Visit <strong>https://amari-pos-with-inventory-management.vercel.app/</strong> in any web browser. The login page will appear for you to enter your credentials to sign in.</p>
 
-    <div class="fig-wrap">
-      <div class="fig-frame">
-        <div class="fig-bar">
-          <div class="dot" style="background:#FF5F57"></div>
-          <div class="dot" style="background:#FEBC2E"></div>
-          <div class="dot" style="background:#28C840"></div>
-          <span class="fig-url">amari-pos-with-inventory-management.vercel.app</span>
+    <div class="norman">
+      <div class="norman-header"><em>🔄</em><span>Interaction Flow — Section 1: Logging In</span></div>
+      <div class="norman-grid">
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">🎯</span>User Goal</div><div class="nc-val">Authenticate and access the role-specific workspace</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⌨️</span>User Input</div><div class="nc-val">Enter username and password, then click <strong>Sign In</strong></div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⚙️</span>System Process</div><div class="nc-val">Verifies credentials and checks the assigned role</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">📤</span>Output</div><div class="nc-val">Dashboard loads if valid; error message appears if invalid</div></div>
+      </div>
+    </div>
+
+    <!-- Login mockup - Full Width -->
+    <div class="fig-frame" style="margin-top:10px;">
+      <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="fig-url">amari-pos-with-inventory-management.vercel.app</span></div>
+      <div style="background:linear-gradient(145deg,#dfe6f5,#e2e9f7); padding:18px; display:flex; justify-content:center;">
+        <div style="background:rgba(255,255,255,0.88); border-radius:14px; padding:18px 24px; width:240px; box-shadow:0 4px 18px rgba(17,50,156,0.1); border:1px solid rgba(255,255,255,0.9);">
+          <div style="text-align:center; margin-bottom:10px;">
+            <div style="font-size:16px; font-weight:800; color:#0d2880;">Amari's</div>
+            <div style="font-size:8px; font-weight:600; color:#11329c; letter-spacing:3px; text-transform:uppercase;">Scoops &amp; Savours</div>
+            <div style="margin:8px auto; width:36px; height:36px; border-radius:50%; background:#EFF6FF; display:flex; align-items:center; justify-content:center; font-size:18px;">🍦</div>
+            <div style="font-size:7.5px; color:#64748b; margin-bottom:10px;">Sign in to access the system</div>
+          </div>
+          <div style="font-size:7.5px; font-weight:600; color:#11329c; margin-bottom:3px;">Username</div>
+          <div style="background:#f1f5f9; border:1px solid rgba(17,50,156,0.2); border-radius:5px; padding:5px 8px; font-size:7.5px; color:#94A3B8; margin-bottom:7px;">Enter your username</div>
+          <div style="font-size:7.5px; font-weight:600; color:#11329c; margin-bottom:3px;">Password</div>
+          <div style="background:#f1f5f9; border:1px solid rgba(17,50,156,0.2); border-radius:5px; padding:5px 8px; font-size:7.5px; color:#94A3B8; margin-bottom:9px;">Enter your password</div>
+          <div style="background:linear-gradient(135deg,#1a3faa,#11329c); color:#fff; border-radius:5px; padding:6px; text-align:center; font-size:8.5px; font-weight:700;">Sign In</div>
         </div>
-        <div style="background:linear-gradient(145deg, #dfe6f5 0%, #e2e9f7 35%, #dde4f3 65%, #dfe6f5 100%); padding:20px; display:flex; justify-content:center; align-items:center;">
-          <div style="background:rgba(255,255,255,0.88); border-radius:16px; padding:20px 28px; width:260px; box-shadow:0 4px 20px rgba(17,50,156,0.1); border:1px solid rgba(255,255,255,0.9);">
-            <div style="text-align:center; margin-bottom:6px;">
-              <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:18px; font-weight:800; color:#0d2880; letter-spacing:0.5px;">Amari's</div>
-              <div style="font-size:9px; font-weight:600; color:#11329c; letter-spacing:3px; text-transform:uppercase;">Scoops &amp; Savours</div>
-            </div>
-            <div style="display:flex; justify-content:center; margin-bottom:6px;">
-              <div style="width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#dfe6f5,#c5d3f0); display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 3px rgba(17,50,156,0.1);">
-                <img src="/amari-blue-logo.png" alt="Logo" style="width:40px; height:40px; object-fit:contain;">
-              </div>
-            </div>
-            <div style="text-align:center; font-size:8.5px; color:#64748b; margin-bottom:10px;">Sign in to access the management system</div>
-            <div style="font-size:8px; font-weight:600; color:#11329c; margin-bottom:3px; letter-spacing:0.02em;">Username</div>
-            <div style="background:rgba(223,230,245,0.5); border:1px solid rgba(17,50,156,0.2); border-radius:6px; padding:5px 8px; font-size:8px; color:#94A3B8; margin-bottom:6px;">Enter your username</div>
-            <div style="font-size:8px; font-weight:600; color:#11329c; margin-bottom:3px; letter-spacing:0.02em;">Password</div>
-            <div style="background:rgba(223,230,245,0.5); border:1px solid rgba(17,50,156,0.2); border-radius:6px; padding:5px 8px; font-size:8px; color:#94A3B8; margin-bottom:8px;">Enter your password</div>
-            <div style="background:linear-gradient(135deg,#1a3faa,#11329c); color:#fff; border-radius:6px; padding:6px; text-align:center; font-size:9px; font-weight:700;">Sign In</div>
-            <div style="text-align:center; font-size:7px; color:#94a3b8; margin-top:8px;">All rights reserved 2025 · Arf2 IM</div>
+      </div>
+    </div>
+    <p class="fig-cap">Figure 2 — Login page with username and password fields</p>
+
+    <div class="two-col" style="margin-top:12px;">
+      <div>
+        <div class="sub-title" style="margin-top:0;">Login Steps</div>
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="stxt">Enter your <strong>Username</strong>.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Enter your <strong>Password</strong>.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">Click <strong>Sign In</strong> — the system verifies your credentials.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">If successful → <strong>Dashboard</strong>. If not → check your details and retry.</div></div>
+        </div>
+        <div class="flow-box" style="margin-top:8px;">
+          <div class="flow-label">Login Flow</div>
+          <div class="flow-chain">
+            <div class="fn">Enter credentials</div><div class="fa">→</div>
+            <div class="fn">Click Sign In</div><div class="fa">→</div>
+            <div class="fn">System authenticates</div><div class="fa">→</div>
+            <div class="fn">Dashboard loads</div>
           </div>
         </div>
       </div>
-    </div>
-    <p class="fig-cap">Figure 2 — Amari POS login page with username and password fields</p>
-
-    <div class="sub-title">Logging In</div>
-    <div class="steps">
-      <div class="step"><div class="snum">1</div><div class="stxt">Enter your <strong>Username</strong> in the first field.</div></div>
-      <div class="step"><div class="snum">2</div><div class="stxt">Enter your <strong>Password</strong> in the second field.</div></div>
-      <div class="step"><div class="snum">3</div><div class="stxt">Click <strong>Sign In</strong>. The system verifies your credentials.</div></div>
-      <div class="step"><div class="snum">4</div><div class="stxt">If successful, you are taken to the <strong>Dashboard</strong>. If not, an error message appears — check your details and try again.</div></div>
-    </div>
-
-    <div class="flow-box" style="margin-top:6px;margin-bottom:16px;">
-      <div class="flow-label">Login Flow</div>
-      <div class="flow-chain">
-        <div class="fn">Enter credentials</div><div class="fa">→</div>
-        <div class="fn">Click Sign In</div><div class="fa">→</div>
-        <div class="fn">System authenticates</div><div class="fa">→</div>
-        <div class="fn">Dashboard loads</div>
+      <div>
+        <div class="sub-title" style="margin-top:0;">Forgot Password?</div>
+        <p class="txt">Only the <span class="rp rp-o">Owner</span> can reset passwords through the Settings module.</p>
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="stxt">Contact your <strong>Owner</strong> or system administrator.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Owner navigates to <strong>Settings → Users</strong>.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">Owner locates your account and resets the password.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">Use the new password to log in.</div></div>
+        </div>
+        <div class="note note-warn" style="margin-top:8px;">
+          <div class="nicon">⚠️</div>
+          <div class="ntxt"><strong>No account yet?</strong> Only the Owner can create new user accounts under Settings → Users.</div>
+        </div>
       </div>
     </div>
 
-    <div class="note note-info">
-      <div class="nicon">ℹ️</div>
-      <div class="ntxt">
-        <strong>Forgot your password?</strong>
-        Contact your administrator — only the Owner role can reset passwords under <b>Settings → Users</b>.
-      </div>
-    </div>
-
-    <div class="div"></div>
-
-    <!-- User Roles -->
-    <div class="sec-title">User Roles &amp; What Each Can Do</div>
-    <div class="sec-rule"></div>
-
-    <p class="txt">Every user is assigned a role when their account is created. Your role determines which parts in the system you can access.</p>
-
-    <table class="dtable" style="margin-bottom:14px;">
-      <thead>
-        <tr><th>Role</th><th>Dashboard</th><th>POS</th><th>Inventory</th><th>Reports</th><th>Settings</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="rp rp-o">Owner</span></td>
-          <td>✓ Full</td><td>✓ Full</td><td>✓ Full</td><td>✓ Full</td><td>✓ Full</td>
-        </tr>
-        <tr>
-          <td><span class="rp rp-m">Manager</span></td>
-          <td>✓ Full</td><td>✓ Full</td><td>✓ Full</td><td>✓ Full</td><td>View only</td>
-        </tr>
-        <tr>
-          <td><span class="rp rp-c">Cashier</span></td>
-          <td>✓ View</td><td>✓ Full</td><td>—</td><td>—</td><td>—</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="note note-info" style="margin-top:6px;">
-      <div class="nicon">ℹ️</div>
-      <div class="ntxt">
-        <strong>Role-based visibility</strong>
-        All roles see the Dashboard. However, <span class="rp rp-c">Cashier</span> accounts see a simplified view — they cannot navigate to Inventory, Reports, or Settings from the sidebar.
-      </div>
+    <div class="note note-info" style="margin-top:12px;">
+      <div class="nicon">💡</div>
+      <div class="ntxt"><strong>Session Security:</strong> The system automatically logs you out after a period of inactivity. Always log out manually when leaving the workstation to protect sensitive data.</div>
     </div>
 
   </div>
 
   <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 2 of 9</span>
+    <span class="df-t">Amari POS &amp; Inventory Management System</span>
+    <span class="df-t">Page 2 of 7</span>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════
-  PAGE 3 — SECTION 3: DASHBOARD
-═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════
+  PAGE 3 — DASHBOARD
+═══════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
-    <div class="dh-left">
-      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
-      <span class="dh-name">Amari POS</span>
-    </div>
+    <div class="dh-left"><div class="dh-icon"><img src="amari-blue-logo.png" alt="Amari Logo"></div><span class="dh-name">Amari POS</span></div>
     <span class="dh-right">User Manual v1.0</span>
   </div>
 
@@ -433,122 +483,99 @@ p.txt strong { color: #0F172A; font-weight: 600; }
     <div class="sec-title">Dashboard</div>
     <div class="sec-rule"></div>
 
-    <p class="txt">After signing in, you land on the <strong>Dashboard</strong> — a real-time overview of your store's performance. It is the first screen every user sees and is available to all roles.</p>
+    <p class="txt">After signing in, you land on the <strong>Dashboard</strong> — a real-time overview of store performance. Available to all roles.</p>
 
-    <div class="sub-title">What You'll See</div>
-    <p class="txt">The top of the Dashboard shows four summary cards that update automatically:</p>
-
-    <table class="dtable" style="margin-bottom:14px;">
-      <thead>
-        <tr><th>Card</th><th>What It Shows</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Today's Sales</strong></td><td>Total peso amount and number of transactions completed today.</td></tr>
-        <tr><td><strong>Total Transactions</strong></td><td>Cumulative count of all transactions recorded in the system.</td></tr>
-        <tr><td><strong>Low Stock Alerts</strong></td><td>Number of products whose stock level has dropped to or below their minimum threshold. Highlighted in red when items need restocking.</td></tr>
-        <tr><td><strong>Avg Order Value</strong></td><td>Average amount per transaction, calculated from all recorded sales.</td></tr>
-      </tbody>
-    </table>
-
-    <p class="txt">Below the cards, two panels appear side by side:</p>
-    <ul class="blist">
-      <li><strong>Recent Transactions</strong> — the latest sales for today, showing transaction ID, time, amount, and payment method.</li>
-      <li><strong>Low Stock Alerts</strong> — products that are running low, with a progress bar showing current stock vs. minimum stock level and a <span class="tag-low">Low Stock</span> badge.</li>
-    </ul>
-
-    <div class="fig-frame" style="margin-top:8px;">
-      <div class="fig-bar">
-        <div class="dot" style="background:#FF5F57"></div>
-        <div class="dot" style="background:#FEBC2E"></div>
-        <div class="dot" style="background:#28C840"></div>
-        <span class="fig-url">amari-pos-with-inventory-management.vercel.app</span>
+    <div class="norman">
+      <div class="norman-header"><em>🔄</em><span>Interaction Flow — Section 2: Dashboard</span></div>
+      <div class="norman-grid">
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">🎯</span>User Goal</div><div class="nc-val">Quickly assess store performance and identify urgent issues</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⌨️</span>User Input</div><div class="nc-val">Sign in or click Dashboard in the sidebar</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⚙️</span>System Process</div><div class="nc-val">Retrieves today's sales, transaction count, low-stock items, and avg order data</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">📤</span>Output</div><div class="nc-val">Summary cards, recent transactions, and low-stock alerts displayed and auto-updated</div></div>
       </div>
-      <div style="background:#F8FAFC; padding:14px 16px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid #E2E8F0;padding-bottom:8px;">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div style="font-size:7px;color:#94A3B8;">☰</div>
-            <div><div style="font-size:11px;font-weight:700;color:#0F172A;">Dashboard</div><div style="font-size:7.5px;color:#94A3B8;">Overview of your store performance</div></div>
-          </div>
-        </div>
+    </div>
+
+    <!-- Dashboard Mockup -->
+    <div class="fig-frame" style="margin-top:6px;">
+      <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="fig-url">Amari POS › Dashboard</span></div>
+      <div style="background:#F8FAFC; padding:12px 14px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-          <div style="font-size:15px;font-weight:800;color:#0F172A;">Welcome, Administrator! 👋</div>
-          <div style="font-size:7px;color:#94A3B8;display:flex;align-items:center;gap:3px;">🕐 Last updated: 2:54:34 PM</div>
+          <div style="font-size:13px;font-weight:800;color:#0F172A;">Welcome, Administrator! 👋</div>
+          <div style="font-size:7px;color:#94A3B8;">🕐 Last updated: 2:54 PM</div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px;">
-          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:8px;padding:10px 12px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:8px;color:#6B7280;font-weight:500;">Today's Sales</span><span style="font-size:8px;color:#94A3B8;">$</span></div>
-            <div style="font-size:14px;font-weight:800;color:#1B3FAB;">₱0.00</div>
-            <div style="font-size:7px;color:#94A3B8;margin-top:2px;">0 transactions today</div>
+        <!-- Summary Cards -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:9px;">
+          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:7px;padding:9px 10px;">
+            <div style="font-size:7.5px;color:#6B7280;margin-bottom:4px;">Today's Sales</div>
+            <div style="font-size:13px;font-weight:800;color:#1B3FAB;">₱0.00</div>
+            <div style="font-size:7px;color:#94A3B8;">0 transactions</div>
           </div>
-          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:8px;padding:10px 12px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:8px;color:#6B7280;font-weight:500;">Total Transactions</span><span style="font-size:8px;color:#94A3B8;">🛒</span></div>
-            <div style="font-size:14px;font-weight:800;color:#0F172A;">18</div>
-            <div style="font-size:7px;color:#94A3B8;margin-top:2px;">All time</div>
+          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:7px;padding:9px 10px;">
+            <div style="font-size:7.5px;color:#6B7280;margin-bottom:4px;">Total Transactions</div>
+            <div style="font-size:13px;font-weight:800;color:#0F172A;">18</div>
+            <div style="font-size:7px;color:#94A3B8;">All time</div>
           </div>
-          <div style="background:#fff;border:1.5px solid #FECACA;border-radius:8px;padding:10px 12px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:8px;color:#6B7280;font-weight:500;">Low Stock Alerts</span><span style="font-size:8px;color:#DC2626;">⚠</span></div>
-            <div style="font-size:14px;font-weight:800;color:#DC2626;">1</div>
-            <div style="font-size:7px;color:#94A3B8;margin-top:2px;">Items need restocking</div>
+          <div style="background:#fff;border:1.5px solid #FECACA;border-radius:7px;padding:9px 10px;">
+            <div style="font-size:7.5px;color:#6B7280;margin-bottom:4px;">⚠ Low Stock</div>
+            <div style="font-size:13px;font-weight:800;color:#DC2626;">1</div>
+            <div style="font-size:7px;color:#94A3B8;">Item needs restocking</div>
           </div>
-          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:8px;padding:10px 12px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:8px;color:#6B7280;font-weight:500;">Avg Order Value</span><span style="font-size:8px;color:#94A3B8;">📈</span></div>
-            <div style="font-size:14px;font-weight:800;color:#0F172A;">₱128.56</div>
-            <div style="font-size:7px;color:#94A3B8;margin-top:2px;">Per transaction</div>
+          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:7px;padding:9px 10px;">
+            <div style="font-size:7.5px;color:#6B7280;margin-bottom:4px;">Avg Order Value</div>
+            <div style="font-size:13px;font-weight:800;color:#0F172A;">₱128.56</div>
+            <div style="font-size:7px;color:#94A3B8;">Per transaction</div>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:2fr 1fr;gap:8px;">
-          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:8px;padding:10px 12px;min-height:70px;">
-            <div style="font-size:9.5px;font-weight:700;color:#0F172A;">Recent Transactions</div>
-            <div style="font-size:7.5px;color:#94A3B8;margin-bottom:8px;">Today's sales activity</div>
-            <div style="font-size:7.5px;color:#CBD5E1;font-style:italic;text-align:center;padding:8px 0;">No transactions yet today</div>
+        <!-- Bottom panels -->
+        <div style="display:grid;grid-template-columns:2fr 1fr;gap:7px;">
+          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:7px;padding:9px 11px;">
+            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:2px;">Recent Transactions</div>
+            <div style="font-size:7px;color:#94A3B8;margin-bottom:7px;">Today's sales activity</div>
+            <div style="font-size:7.5px;color:#CBD5E1;font-style:italic;text-align:center;padding:6px 0;">No transactions yet today</div>
           </div>
-          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:8px;padding:10px 12px;">
-            <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;"><span style="font-size:9px;color:#DC2626;">⚠</span><span style="font-size:9.5px;font-weight:700;color:#0F172A;">Low Stock Alerts</span></div>
-            <div style="font-size:7.5px;color:#94A3B8;margin-bottom:6px;">Products need attention</div>
-            <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:6px;padding:7px 8px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
-                <span style="font-size:8.5px;font-weight:600;color:#0F172A;">Butterscotch</span>
-                <span class="tag-low">Low Stock</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;font-size:7px;color:#6B7280;margin-bottom:3px;">
-                <span>Current: 0</span><span>Min: 0</span>
-              </div>
-              <div style="background:#E2E8F0;border-radius:3px;height:4px;overflow:hidden;">
-                <div style="background:#1B3FAB;width:100%;height:100%;border-radius:3px;"></div>
-              </div>
+          <div style="background:#fff;border:1.5px solid #D1FAE5;border-radius:7px;padding:9px 11px;">
+            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:2px;">⚠ Low Stock Alerts</div>
+            <div style="font-size:7px;color:#94A3B8;margin-bottom:5px;">Products need attention</div>
+            <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:5px;padding:6px 8px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;"><span style="font-size:8px;font-weight:600;">Butterscotch</span><span class="tag-low">Low</span></div>
+              <div style="background:#E2E8F0;border-radius:3px;height:3px;"><div style="background:#1B3FAB;width:100%;height:100%;border-radius:3px;"></div></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <p class="fig-cap">Figure 3 — Dashboard showing summary cards, recent transactions, and low stock alerts</p>
+    <p class="fig-cap">Figure 3 — Dashboard: summary cards, recent transactions, and low stock alerts</p>
 
-    <div class="note note-info" style="margin-top:8px;">
+    <table class="dtable" style="margin-top:10px;">
+      <thead><tr><th>Card</th><th>What It Shows</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Today's Sales</strong></td><td>Total peso amount and number of transactions today.</td></tr>
+        <tr><td><strong>Total Transactions</strong></td><td>Cumulative count of all recorded transactions.</td></tr>
+        <tr><td><strong>Low Stock Alerts</strong></td><td>Products at or below their minimum threshold — shown in red.</td></tr>
+        <tr><td><strong>Avg Order Value</strong></td><td>Average amount per transaction from all recorded sales.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note note-info" style="margin-top:30px;">
       <div class="nicon">ℹ️</div>
-      <div class="ntxt">
-        <strong>Role-based visibility</strong>
-        All roles see the Dashboard. However, <span class="rp rp-c">Cashier</span> accounts see a simplified view — they cannot navigate to Inventory, Reports, or Settings from the sidebar.
-      </div>
+      <div class="ntxt"><strong>Role-based visibility</strong> All roles see the Dashboard. <span class="rp rp-c">Cashier</span> accounts see a simplified view — no access to Inventory, Reports, or Settings.</div>
     </div>
 
   </div>
 
   <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 3 of 9</span>
+    <span class="df-t">Amari POS &amp; Inventory Management System</span>
+    <span class="df-t">Page 3 of 7</span>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════
-  PAGE 4 — SECTION 4: POS MODULE
-═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════
+  PAGE 4 — POS MODULE
+═══════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
-    <div class="dh-left">
-      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
-      <span class="dh-name">Amari POS</span>
-    </div>
+    <div class="dh-left"><div class="dh-icon"><img src="amari-blue-logo.png" alt="Amari Logo"></div><span class="dh-name">Amari POS</span></div>
     <span class="dh-right">User Manual v1.0</span>
   </div>
 
@@ -558,97 +585,176 @@ p.txt strong { color: #0F172A; font-weight: 600; }
     <div class="sec-title">Point of Sale (POS)</div>
     <div class="sec-rule"></div>
 
-    <p class="txt">The POS module is where you process customer transactions. It is available to all roles. Products appear in a grid — add them to the cart, then check out.</p>
+    <p class="txt">The POS module is where customer transactions are processed. Available to all roles. Products appear in a grid — add them to the cart, then check out.</p>
 
-    <div class="fig-frame" style="margin-top:4px;">
-      <div class="fig-bar">
-        <div class="dot" style="background:#FF5F57"></div>
-        <div class="dot" style="background:#FEBC2E"></div>
-        <div class="dot" style="background:#28C840"></div>
-        <span class="fig-url">Amari POS › Point of Sale</span>
-      </div>
-      <div class="fig-body" style="padding:0;">
-        <img src="/pos.png" alt="POS main screen" style="width:100%;display:block;" />
+    <div class="norman">
+      <div class="norman-header"><em>🔄</em><span>Interaction Flow — Section 3: Point of Sale</span></div>
+      <div class="norman-grid">
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">🎯</span>User Goal</div><div class="nc-val">Process a customer purchase quickly and accurately</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⌨️</span>User Input</div><div class="nc-val">Select products, choose payment method, enter amount, confirm</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⚙️</span>System Process</div><div class="nc-val">Records sale, computes totals and change, deducts stock from inventory</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">📤</span>Output</div><div class="nc-val">Receipt displayed; cart clears; inventory reduced automatically</div></div>
       </div>
     </div>
-    <p class="fig-cap">Figure 4 — POS screen with product grid, cart panel, and checkout button</p>
 
-    <div class="fig-frame" style="margin-top:10px;">
-      <div class="fig-bar">
-        <div class="dot" style="background:#FF5F57"></div>
-        <div class="dot" style="background:#FEBC2E"></div>
-        <div class="dot" style="background:#28C840"></div>
-        <span class="fig-url">Amari POS › Complete Transaction</span>
-      </div>
-      <div class="fig-body" style="padding:0;">
-        <img src="/complete-sale.png" alt="Complete transaction modal" style="width:100%;display:block;" />
-      </div>
-    </div>
-    <p class="fig-cap">Figure 4.1 — Checkout modal with receipt preview and payment options</p>
-
-    <div class="two-col">
-      <div>
-        <div class="sub-title">3.1 Adding Products to the Cart</div>
-        <div class="steps">
-          <div class="step"><div class="snum">1</div><div class="stxt">Click <strong>POS</strong> in the sidebar to open the sales screen.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">Browse the product grid or <strong>type in the search bar</strong> to find a product.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt"><strong>Click a product card</strong> to add it. Click again to add another unit.</div></div>
-          <div class="step"><div class="snum">4</div><div class="stxt">The cart on the right <strong>updates instantly</strong> with quantity and total.</div></div>
-        </div>
-        <div class="flow-box">
-          <div class="flow-label">Add-to-Cart Flow</div>
-          <div class="flow-chain">
-            <div class="fn">Click a product</div><div class="fa">→</div>
-            <div class="fn">Item added to cart</div><div class="fa">→</div>
-            <div class="fn">Total recalculates</div>
+    <!-- POS Mockup (simplified) -->
+    <div class="fig-frame" style="margin-top:6px;">
+      <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="fig-url">Amari POS › Point of Sale</span></div>
+      <div style="background:#fff; padding:0;">
+        <div style="padding:7px 12px; border-bottom:1px solid #E2E8F0; display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-size:9.5px; font-weight:700; color:#0F172A;">Point of Sale</div>
+          <div style="display:flex; gap:4px;">
+            <div style="background:#1B3FAB; color:#fff; border-radius:4px; padding:2px 8px; font-size:7.5px; font-weight:700;">All</div>
+            <div style="background:#fff; border:1px solid #E2E8F0; color:#374151; border-radius:4px; padding:2px 8px; font-size:7.5px;">Beverages</div>
+            <div style="background:#fff; border:1px solid #E2E8F0; color:#374151; border-radius:4px; padding:2px 8px; font-size:7.5px;">Food</div>
+            <div style="background:#fff; border:1px solid #E2E8F0; color:#374151; border-radius:4px; padding:2px 8px; font-size:7.5px;">Ice Cream</div>
+            <div style="display:flex; align-items:center; gap:4px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:4px; padding:2px 8px; margin-left:8px;"><span style="font-size:7.5px; color:#94A3B8;">🔍 Search...</span></div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="sub-title">3.2 Completing a Transaction</div>
-        <div class="steps">
-          <div class="step"><div class="snum">1</div><div class="stxt">Review items and quantities in the cart.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">Select <strong>Payment Method</strong>. Enter amount received.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt">Click <strong>Confirm Payment</strong> button.</div></div>
-          <div class="step"><div class="snum">4</div><div class="stxt">A <strong>receipt</strong> appears on screen. Stock is deducted automatically.</div></div>
-        </div>
-        <div class="flow-box">
-          <div class="flow-label">Checkout Flow</div>
-          <div class="flow-chain">
-            <div class="fn">Click Complete Sale</div><div class="fa">→</div>
-            <div class="fn">Sale &amp; stock saved</div><div class="fa">→</div>
-            <div class="fn">Receipt shown</div>
+        <div style="display:grid; grid-template-columns:1fr 185px;">
+          <!-- Product Grid (representative) -->
+          <div style="padding:9px 10px; border-right:1px solid #E2E8F0;">
+            <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:5px;">
+              <div style="background:#F0FDF4; border:1px solid #D1FAE5; border-radius:6px; padding:7px 4px; text-align:center;"><div style="font-size:16px; margin-bottom:2px;">🧋</div><div style="font-size:6.5px; color:#0F172A; font-weight:500;">Black Forest Milktea</div><div style="font-size:7px; color:#1B3FAB; font-weight:700; margin-top:1px;">₱49.00</div><div style="font-size:6px; color:#94A3B8;">16 left</div></div>
+              <div style="background:#F0FDF4; border:1px solid #D1FAE5; border-radius:6px; padding:7px 4px; text-align:center;"><div style="font-size:16px; margin-bottom:2px;">🥤</div><div style="font-size:6.5px; color:#0F172A; font-weight:500;">Blue Lemonade</div><div style="font-size:7px; color:#1B3FAB; font-weight:700; margin-top:1px;">₱49.00</div><div style="font-size:6px; color:#94A3B8;">15 left</div></div>
+              <div style="background:#F9FAFB; border:1px solid #E2E8F0; border-radius:6px; padding:7px 4px; text-align:center; opacity:0.65;"><div style="font-size:16px; margin-bottom:2px;">🍦</div><div style="font-size:6.5px; color:#94A3B8;">Butterscotch</div><div style="font-size:7px; color:#94A3B8; font-weight:700; margin-top:1px;">₱49.00</div><div style="background:#EF4444;color:#fff;border-radius:10px;font-size:6px;font-weight:700;padding:1px 5px;margin-top:2px;display:inline-block;">Out</div></div>
+              <div style="background:#F0FDF4; border:1px solid #D1FAE5; border-radius:6px; padding:7px 4px; text-align:center;"><div style="font-size:16px; margin-bottom:2px;">☕</div><div style="font-size:6.5px; color:#0F172A; font-weight:500;">Caramel Latte</div><div style="font-size:7px; color:#1B3FAB; font-weight:700; margin-top:1px;">₱49.00</div><div style="font-size:6px; color:#94A3B8;">15 left</div></div>
+              <div style="background:#1B3FAB; border:1px solid #1B3FAB; border-radius:6px; padding:7px 4px; text-align:center;"><div style="font-size:16px; margin-bottom:2px;">🧊</div><div style="font-size:6.5px; color:#fff; font-weight:500;">Caramel Frappe</div><div style="font-size:7px; color:#A5F3E8; font-weight:700; margin-top:1px;">₱49.00</div><div style="font-size:6px; color:rgba(255,255,255,0.6);">14 left</div></div>
+            </div>
+            <div style="font-size:7.5px; color:#94A3B8; font-style:italic; text-align:center; margin-top:7px; padding-top:5px; border-top:1px solid #F1F5F9;">+ more products in grid</div>
+          </div>
+          <!-- Cart Panel -->
+          <div style="padding:9px 10px; background:#F0FDF4;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:7px;"><div style="font-size:9px; font-weight:700; color:#0F172A;">Cart</div><span style="font-size:9px; color:#94A3B8;">🗑</span></div>
+            <div style="background:#fff; border:1px solid #D1FAE5; border-radius:6px; padding:6px 7px; margin-bottom:4px;">
+              <div style="display:flex; align-items:center; gap:4px; margin-bottom:3px;"><div style="font-size:9px;">🧊</div><div style="flex:1; font-size:7px; font-weight:600; color:#0F172A;">Caramel Frappe</div><span style="font-size:9px; color:#94A3B8;">✕</span></div>
+              <div style="display:flex; justify-content:space-between; align-items:center;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:14px;height:14px;background:#E2E8F0;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;">−</div><span style="font-size:7.5px;font-weight:700;">1</span><div style="width:14px;height:14px;background:#E2E8F0;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;">+</div></div><span style="font-size:7.5px;font-weight:700;color:#1B3FAB;">₱49.00</span></div>
+            </div>
+            <div style="border-top:1px solid #D1FAE5; padding-top:6px; margin-top:4px;">
+              <div style="display:flex; justify-content:space-between; font-size:7.5px; color:#6B7280; margin-bottom:2px;"><span>VAT (12%)</span><span>₱5.25</span></div>
+              <div style="display:flex; justify-content:space-between; font-size:8.5px; color:#1B3FAB; font-weight:800; margin-bottom:6px;"><span>Total</span><span>₱49.00</span></div>
+              <div style="background:#1B3FAB; color:#fff; border-radius:5px; padding:6px; text-align:center; font-size:8px; font-weight:700;">💳 Checkout</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <p class="fig-cap">Figure 4 — POS screen: product grid with category filters, cart panel, and checkout button</p>
 
-    <div class="note note-info" style="margin-top:10px;">
-      <div class="nicon">📷</div>
-      <div class="ntxt">
-        <strong>3.3 — E-Payment QR Code Scanning</strong>
-        If customer chooses <b>E-Payment</b> as the payment method, a QR code appears on the payment screen. Customer scans it with their e-wallet app to complete the transaction.
+    <div class="two-col" style="margin-top:10px;">
+      <div>
+        <div class="sub-title" style="margin-top:0;">Processing a Sale</div>
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="stxt">Open <strong>POS</strong> from the sidebar.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Click a product to add it to the cart. Adjust quantity with <strong>+</strong> / <strong>−</strong>.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">Click <strong>Checkout</strong> to open the Complete Transaction dialog.</div></div>
+        </div>
+
+        <div class="note note-info" style="margin-top:6px;">
+          <div class="nicon">🔍</div>
+          <div class="ntxt"><strong>Can't find a product?</strong> Use the search bar at the top of the POS screen to find items by name.</div>
+        </div>
+        <div class="note note-warn" style="margin-top:6px;">
+          <div class="nicon">⚠️</div>
+          <div class="ntxt"><strong>Out of stock items</strong> are grayed out and cannot be added to the cart.</div>
+        </div>
+                <div class="flow-box" style="margin-top:6px;">
+          <div class="flow-label">POS Transaction Flow</div>
+          <div class="flow-chain">
+            <div class="fn">Select products</div><div class="fa">→</div>
+            <div class="fn">Checkout</div><div class="fa">→</div>
+            <div class="fn">Payment confirmed</div><div class="fa">→</div>
+            <div class="fn">Receipt + stock updated</div>
+          </div>
+        </div>
       </div>
+      
+      <div>
+        <div class="sub-title" style="margin-top:0;">Completing a Transaction</div>
+        <div class="fig-frame">
+          <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="fig-url">Amari POS › Complete Transaction</span></div>
+          <div style="background:#fff; padding:8px 10px;">
+            <div style="font-size:8px; font-weight:700; color:#0F172A; margin-bottom:5px;">Complete Transaction</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+              <!-- Receipt Preview -->
+              <div style="border:1px dashed #CBD5E1; border-radius:5px; padding:6px 7px;">
+                <div style="text-align:center; margin-bottom:4px;">
+                  <div style="font-size:7.5px; font-weight:700; color:#0F172A;">Amari's Scoops &amp; Savours</div>
+                  <div style="font-size:5.5px; color:#94A3B8;">Official Receipt</div>
+                </div>
+                <div style="border-top:1px solid #E2E8F0; padding-top:3px; margin-top:3px;">
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#374151; margin-bottom:1px;"><span>Caramel Latte Frappe</span><span>₱49.00</span></div>
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#374151; margin-bottom:1px;"><span>Caramel Macchiato</span><span>₱49.00</span></div>
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#374151; margin-bottom:1px;"><span>French Fries</span><span>₱30.00</span></div>
+                </div>
+                <div style="border-top:1px solid #E2E8F0; padding-top:3px; margin-top:3px;">
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#6B7280;"><span>Subtotal</span><span>₱114.29</span></div>
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#6B7280;"><span>VAT (12%)</span><span>₱13.71</span></div>
+                  <div style="display:flex; justify-content:space-between; font-size:7px; font-weight:800; color:#0F172A; margin-top:2px;"><span>Total</span><span>₱128.00</span></div>
+                </div>
+                <div style="border-top:1px solid #E2E8F0; padding-top:3px; margin-top:3px;">
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#374151;"><span>Cash Received</span><span>₱350.00</span></div>
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#374151;"><span>Change</span><span>₱222.00</span></div>
+                </div>
+              </div>
+              <!-- Payment Method -->
+              <div>
+                <div style="font-size:6.5px; font-weight:700; color:#0F172A; margin-bottom:3px;">Payment Method</div>
+                <div style="display:flex; gap:3px; margin-bottom:5px;">
+                  <div style="flex:1; background:#1B3FAB; color:#fff; border-radius:3px; padding:3px; text-align:center; font-size:6px; font-weight:700;">Cash</div>
+                  <div style="flex:1; background:#fff; border:1px solid #E2E8F0; color:#374151; border-radius:3px; padding:3px; text-align:center; font-size:6px;">E-Payment</div>
+                </div>
+                <div style="font-size:6px; color:#6B7280; margin-bottom:2px;">Cash Received</div>
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:3px; padding:3px 5px; font-size:7px; font-weight:600; color:#0F172A; margin-bottom:4px;">350</div>
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:5px;">
+                  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:3px; padding:2px; text-align:center; font-size:5.5px; color:#374151;">₱50</div>
+                  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:3px; padding:2px; text-align:center; font-size:5.5px; color:#374151;">₱100</div>
+                  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:3px; padding:2px; text-align:center; font-size:5.5px; color:#374151;">₱150</div>
+                  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:3px; padding:2px; text-align:center; font-size:5.5px; color:#374151;">₱200</div>
+                  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:3px; padding:2px; text-align:center; font-size:5.5px; color:#374151;">₱500</div>
+                  <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:3px; padding:2px; text-align:center; font-size:5.5px; color:#374151;">₱1000</div>
+                </div>
+                <div style="border-top:1px solid #E2E8F0; padding-top:3px;">
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#374151; margin-bottom:1px;"><span>Total Amount:</span><span style="font-weight:700;">₱128.00</span></div>
+                  <div style="display:flex; justify-content:space-between; font-size:6px; color:#374151; margin-bottom:1px;"><span>Cash Received:</span><span style="font-weight:700;">₱350.00</span></div>
+                  <div style="display:flex; justify-content:space-between; font-size:7px; margin-bottom:4px;"><span style="font-weight:700; color:#0F172A;">Change:</span><span style="font-weight:800; color:#16A34A;">₱222.00</span></div>
+                </div>
+                <div style="background:#1B3FAB; color:#fff; border-radius:4px; padding:4px; text-align:center; font-size:6.5px; font-weight:700;">Confirm Payment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="fig-cap">Figure 5 — Complete Transaction: receipt preview, payment method, and change calculation</p>
+
+        <div class="steps" style="margin-top:6px;">
+          <div class="step"><div class="snum">1</div><div class="stxt">Review the <strong>Receipt Preview</strong> on the left — items, subtotal, VAT, and total.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Select a payment method: <strong>Cash</strong> or <strong>E-Payment</strong>.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">For cash: enter the amount received or use the quick amount buttons.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">Verify the <strong>Change</strong> amount displayed, then click <strong>Confirm Payment</strong> — a receipt is generated.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note note-info" style="margin-top:30px;">
+      <div class="nicon">ℹ️</div>
+      <div class="ntxt"><strong>Transaction records</strong> All completed transactions are automatically logged and can be viewed in the Sales Reports section for auditing purposes.</div>
     </div>
 
   </div>
 
   <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 4 of 9</span>
+    <span class="df-t">Amari POS &amp; Inventory Management System</span>
+    <span class="df-t">Page 4 of 7</span>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════
-  PAGE 5 — SECTION 5: INVENTORY
-═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════
+  PAGE 5 — INVENTORY
+═══════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
-    <div class="dh-left">
-      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
-      <span class="dh-name">Amari POS</span>
-    </div>
+    <div class="dh-left"><div class="dh-icon"><img src="amari-blue-logo.png" alt="Amari Logo"></div><span class="dh-name">Amari POS</span></div>
     <span class="dh-right">User Manual v1.0</span>
   </div>
 
@@ -658,243 +764,110 @@ p.txt strong { color: #0F172A; font-weight: 600; }
     <div class="sec-title">Inventory Management</div>
     <div class="sec-rule"></div>
 
-    <p class="txt">The Inventory module is where you maintain your sellable products and raw ingredients. Use it daily to keep pricing accurate, avoid stockouts, and ensure every POS sale deducts the correct items. Access is limited to <span class="rp rp-o">Owner</span> and <span class="rp rp-m">Manager</span> roles.</p>
+    <p class="txt">The Inventory module is available to <span class="rp rp-o">Owner</span> and <span class="rp rp-m">Manager</span>. It contains two tabs: <strong>Products</strong> and <strong>Ingredients</strong>.</p>
 
-    <div class="sub-title">What You Can Do in Inventory</div>
-    <ul class="blist" style="margin-bottom:14px;">
-      <li><strong>Products</strong> — add new menu items, update prices, and manage availability.</li>
-      <li><strong>Ingredients</strong> — track raw stock levels and minimum thresholds.</li>
-      <li><strong>Stock control</strong> — identify low inventory early to prevent missed sales.</li>
-    </ul>
-
-    <div class="sub-title">4.1 Products — Create, Update, and Remove Items</div>
-
-    <div class="fig-frame" style="margin-top:6px;">
-      <div class="fig-bar">
-        <div class="dot" style="background:#FF5F57"></div>
-        <div class="dot" style="background:#FEBC2E"></div>
-        <div class="dot" style="background:#28C840"></div>
-        <span class="fig-url">Amari POS › Inventory › Products</span>
-      </div>
-      <div style="background:#F8FAFC;padding:12px 14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-          <div style="font-size:10px;font-weight:700;color:#0F172A;">Products</div>
-          <div style="display:flex;gap:6px;">
-            <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:4px 8px;font-size:8px;color:#94A3B8;">Search product...</div>
-            <div style="background:#1B3FAB;color:#fff;border-radius:5px;padding:4px 8px;font-size:8px;font-weight:700;">+ Add Product</div>
-          </div>
-        </div>
-        <table class="dtable" style="margin:0;">
-          <thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Action</th></tr></thead>
-          <tbody>
-            <tr><td>Ube Sundae</td><td>Dessert</td><td>₱95.00</td><td>32</td><td><span class="tag-ok">In Stock</span></td><td><span class="tag-edit">Edit</span></td></tr>
-            <tr><td>Caramel Float</td><td>Drinks</td><td>₱120.00</td><td>6</td><td><span class="tag-low">Low</span></td><td><span class="tag-edit">Edit</span></td></tr>
-            <tr><td>Choco Chip Cup</td><td>Dessert</td><td>₱85.00</td><td>0</td><td><span class="tag-low">Out</span></td><td><span class="tag-del">Delete</span></td></tr>
-          </tbody>
-        </table>
+    <div class="norman">
+      <div class="norman-header"><em>🔄</em><span>Interaction Flow — Section 4: Inventory Management</span></div>
+      <div class="norman-grid">
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">🎯</span>User Goal</div><div class="nc-val">Keep product catalog and ingredient stock accurate and up-to-date</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⌨️</span>User Input</div><div class="nc-val">Add, edit, or delete products and ingredients using the appropriate forms</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⚙️</span>System Process</div><div class="nc-val">Saves changes to the catalog; monitors stock against minimum thresholds</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">📤</span>Output</div><div class="nc-val">Updated product list in POS; Low Stock badge appears when threshold is reached</div></div>
       </div>
     </div>
-    <p class="fig-cap">Figure 5 — Inventory Products view with list, stock status, and actions</p>
 
-    <div class="two-col" style="grid-template-columns: 360px 1fr; align-items: start; margin-top:10px;">
+    <div class="two-col" style="margin-top:8px; align-items:start;">
       <div>
-        <div class="fig-frame" style="width: 360px; max-width: 360px;">
-          <div class="fig-bar">
-            <div class="dot" style="background:#FF5F57"></div>
-            <div class="dot" style="background:#FEBC2E"></div>
-            <div class="dot" style="background:#28C840"></div>
-            <span class="fig-url">Amari POS › Add Product</span>
-          </div>
-          <div style="padding:10px 12px;background:#fff;">
-            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:6px;">Add New Product</div>
-            <div style="display:grid;gap:5px;">
-              <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Product name</div>
-              <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Category</div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-                <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Price</div>
-                <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Initial stock</div>
-              </div>
-              <div style="background:#1B3FAB;color:#fff;border-radius:4px;padding:5px 8px;font-size:8px;font-weight:700;text-align:center;">Add Product</div>
+        <div class="sub-title" style="margin-top:0;">4.1 Products Tab</div>
+
+        <div class="fig-frame">
+          <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="fig-url">Amari POS › Inventory › Products</span></div>
+          <div style="background:#F8FAFC; padding:10px 12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:7px;">
+              <div style="font-size:9px; font-weight:700; color:#0F172A;">Products</div>
+              <div style="background:#1B3FAB; color:#fff; border-radius:4px; padding:3px 7px; font-size:7.5px; font-weight:700;">+ Add Product</div>
             </div>
+            <table class="dtable" style="margin:0; font-size:10px;">
+              <thead><tr><th>Product</th><th>Price</th><th>Stock</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>Caramel Latte</td><td>₱49.00</td><td>15</td><td><span class="tag-edit">✏ Edit</span></td></tr>
+                <tr><td>Blue Lemonade</td><td>₱49.00</td><td>14</td><td><span class="tag-edit">✏ Edit</span></td></tr>
+                <tr><td>Butterscotch</td><td>₱49.00</td><td><span class="tag-low">0 — Low</span></td><td><span class="tag-edit">✏ Edit</span></td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <p class="fig-cap">Figure 5.1 — Product form layout</p>
-      </div>
-      <div>
-        <div class="note note-info" style="margin-top:0;">
-          <div class="nicon">🧾</div>
-          <div class="ntxt"><strong>Data quality tip</strong>Use consistent product names, categories, and units to keep reports clean and prevent duplicate menu items.</div>
-        </div>
-        <div class="note note-warn" style="margin-top:10px;">
-          <div class="nicon">⚠️</div>
-          <div class="ntxt"><strong>Delete cannot be undone</strong>A confirmation prompt appears first. Click Cancel if you change your mind.</div>
-        </div>
-      </div>
-    </div>
+        <p class="fig-cap">Figure 6 — Products tab with edit and delete actions</p>
 
-    <div class="two-col" style="margin-top:4px;">
-      <div>
-        <div class="sub-title" style="margin-top:0;">Product Workflow</div>
-        <div class="steps">
-          <div class="step"><div class="snum">1</div><div class="stxt">Open <strong>Inventory</strong>. Confirm you are in the <strong>Products</strong> tab.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">Click <strong>+ Add Product</strong>, complete the fields, then click <strong>Add Product</strong>.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt">To update an item, click <span class="tag-edit">✏ Edit</span>, revise the details, then click <strong>Save</strong>.</div></div>
-          <div class="step"><div class="snum">4</div><div class="stxt">To remove an item, click <span class="tag-del">🗑 Delete</span> and confirm the action.</div></div>
+        <div class="steps" style="margin-top:8px;">
+          <div class="step"><div class="snum">1</div><div class="stxt">Open <strong>Inventory → Products</strong>.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Click <strong>+ Add Product</strong>, fill in all fields, then click <strong>Add Product</strong>.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">To update: click <span class="tag-edit">✏ Edit</span>, revise, then click <strong>Save</strong>.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">To remove: click <span class="tag-del">🗑 Delete</span> and confirm.</div></div>
         </div>
       </div>
+
       <div>
-        <div class="flow-box" style="margin-top:0;">
-          <div class="flow-label">Product Save Flow</div>
-          <div class="flow-chain">
-            <div class="fn">Fill in details</div><div class="fa">→</div>
-            <div class="fn">Click Add / Save</div><div class="fa">→</div>
-            <div class="fn">Catalog is updated</div><div class="fa">→</div>
-            <div class="fn">New stock state appears</div>
+        <div class="sub-title" style="margin-top:0;">4.2 Ingredients Tab</div>
+
+        <div class="fig-frame">
+          <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="fig-url">Amari POS › Inventory › Ingredients</span></div>
+          <div style="background:#F8FAFC; padding:10px 12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:7px;">
+              <div style="font-size:9px; font-weight:700; color:#0F172A;">Ingredients</div>
+              <div style="background:#1B3FAB; color:#fff; border-radius:4px; padding:3px 7px; font-size:7.5px; font-weight:700;">+ Add Ingredient</div>
+            </div>
+            <table class="dtable" style="margin:0; font-size:10px;">
+              <thead><tr><th>Ingredient</th><th>Stock</th><th>Min</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Whole Milk</td><td>18 L</td><td>10</td><td><span class="tag-ok">OK</span></td></tr>
+                <tr><td>Choco Syrup</td><td>2 btl</td><td>5</td><td><span class="tag-low">Low</span></td></tr>
+                <tr><td>Vanilla Base</td><td>1 kg</td><td>3</td><td><span class="tag-low">Low</span></td></tr>
+                
+              </tbody>
+            </table>
           </div>
         </div>
+        <p class="fig-cap">Figure 7 — Ingredients with current stock, minimum, and status</p>
 
+        <div class="steps" style="margin-top:8px;">
+          <div class="step"><div class="snum">1</div><div class="stxt">Open <strong>Inventory → Ingredients</strong>.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Click <strong>+ Add Ingredient</strong>, fill in all fields, then click <strong>Add Ingredient</strong>.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">To update: click <span class="tag-edit">✏ Edit</span>, revise, then click <strong>Save</strong>.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">To remove: click <span class="tag-del">🗑 Delete</span> and confirm.</div></div>
+        </div>
       </div>
     </div>
 
-    <div class="note note-info" style="margin-top:10px;">
-      <div class="nicon">📌</div>
-      <div class="ntxt"><strong>Next on the following page</strong>Ingredients management, reorder workflow, and low-stock handling are shown in Section 4.2 continuation.</div>
+    <div class="flow-box" style="margin-top:8px;">
+      <div class="flow-label">Stock Alert Flow (Products &amp; Ingredients)</div>
+      <div class="flow-chain">
+        <div class="fn">Stock hits minimum</div><div class="fa">→</div>
+        <div class="fn">Item marked Low</div><div class="fa">→</div>
+        <div class="fn">Alert on Dashboard</div>
+      </div>
     </div>
 
-    <div class="div"></div>
-
+    <div class="note note-info" style="margin-top:6px;">
+      <div class="nicon">💡</div>
+      <div class="ntxt"><strong>Recommended routine:</strong> Review both product and ingredient levels at opening and before closing to avoid stockouts.</div>
+    </div>
 
   </div>
 
   <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 5 of 9</span>
+    <span class="df-t">Amari POS &amp; Inventory Management System</span>
+    <span class="df-t">Page 5 of 7</span>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════
-  PAGE 6 — SECTION 4.2: INVENTORY CONTINUATION
-═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════
+  PAGE 6 — REPORTS + SETTINGS + LOGOUT
+═══════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
-    <div class="dh-left">
-      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
-      <span class="dh-name">Amari POS</span>
-    </div>
-    <span class="dh-right">User Manual v1.0</span>
-  </div>
-
-  <div class="body">
-    <div class="sec-label">Section 4 (continued)</div>
-    <div class="sec-title">Inventory Management — Ingredients</div>
-    <div class="sec-rule"></div>
-
-    <p class="txt">Ingredients tracking ensures you have enough raw materials to serve products consistently. Set minimum levels so the system can flag items before they run out.</p>
-
-    <div class="fig-frame" style="margin-top:6px;">
-      <div class="fig-bar">
-        <div class="dot" style="background:#FF5F57"></div>
-        <div class="dot" style="background:#FEBC2E"></div>
-        <div class="dot" style="background:#28C840"></div>
-        <span class="fig-url">Amari POS › Inventory › Ingredients</span>
-      </div>
-      <div style="background:#F8FAFC;padding:12px 14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-          <div style="font-size:10px;font-weight:700;color:#0F172A;">Ingredients</div>
-          <div style="background:#1B3FAB;color:#fff;border-radius:5px;padding:4px 8px;font-size:8px;font-weight:700;">+ Add Ingredient</div>
-        </div>
-        <table class="dtable" style="margin:0;">
-          <thead><tr><th>Ingredient</th><th>Unit</th><th>Current</th><th>Min</th><th>Status</th><th>Action</th></tr></thead>
-          <tbody>
-            <tr><td>Whole Milk</td><td>Liters</td><td>18</td><td>10</td><td><span class="tag-ok">OK</span></td><td><span class="tag-edit">Edit</span></td></tr>
-            <tr><td>Chocolate Syrup</td><td>Bottles</td><td>2</td><td>5</td><td><span class="tag-low">Low</span></td><td><span class="tag-edit">Edit</span></td></tr>
-            <tr><td>Vanilla Base</td><td>Kg</td><td>1</td><td>3</td><td><span class="tag-low">Low</span></td><td><span class="tag-del">Delete</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <p class="fig-cap">Figure 6 — Ingredients view with current stock, minimum level, and status</p>
-
-    <div class="two-col" style="grid-template-columns: 360px 1fr; align-items: start; margin-top:10px;">
-      <div>
-        <div class="fig-frame" style="width: 360px; max-width: 360px;">
-          <div class="fig-bar">
-            <div class="dot" style="background:#FF5F57"></div>
-            <div class="dot" style="background:#FEBC2E"></div>
-            <div class="dot" style="background:#28C840"></div>
-            <span class="fig-url">Amari POS › Add Ingredient</span>
-          </div>
-          <div style="padding:10px 12px;background:#fff;">
-            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:6px;">Add New Ingredient</div>
-            <div style="display:grid;gap:5px;">
-              <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Ingredient name</div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-                <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Unit (kg/L/pcs)</div>
-                <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Current stock</div>
-              </div>
-              <div style="border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px;font-size:8px;color:#94A3B8;">Minimum threshold</div>
-              <div style="background:#1B3FAB;color:#fff;border-radius:4px;padding:5px 8px;font-size:8px;font-weight:700;text-align:center;">Add Ingredient</div>
-            </div>
-          </div>
-        </div>
-        <p class="fig-cap">Figure 6.1 — Add New Ingredient form layout</p>
-      </div>
-      <div>
-        <div class="note note-info" style="margin-top:0;">
-          <div class="nicon">🧪</div>
-          <div class="ntxt"><strong>Ingredient setup note</strong>Set realistic minimum thresholds per ingredient so low-stock alerts trigger early enough for timely replenishment.</div>
-        </div>
-        <div class="note note-ok" style="margin-top:10px;">
-          <div class="nicon">✅</div>
-          <div class="ntxt"><strong>Recommended routine</strong>Review ingredient levels at opening and before closing shift to avoid next-day stockouts.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="two-col" style="margin-top:4px;">
-      <div>
-        <div class="sub-title" style="margin-top:0;">Ingredient Workflow</div>
-        <div class="steps">
-          <div class="step"><div class="snum">1</div><div class="stxt">Go to <strong>Inventory</strong> and open the <strong>Ingredients</strong> tab.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">Click <strong>+ Add Ingredient</strong>, then enter name, unit, quantity, and minimum level.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt">Click <strong>Add Ingredient</strong> to save and include it in monitoring.</div></div>
-          <div class="step"><div class="snum">4</div><div class="stxt">Update quantities after each delivery to keep alerts accurate.</div></div>
-        </div>
-      </div>
-      <div>
-        <div class="flow-box" style="margin-top:0;">
-          <div class="flow-label">Stock Alert Flow</div>
-          <div class="flow-chain">
-            <div class="fn">Stock hits minimum</div><div class="fa">→</div>
-            <div class="fn">Item marked Low</div><div class="fa">→</div>
-            <div class="fn">Reorder requested</div><div class="fa">→</div>
-            <div class="fn">Inventory updated</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  
-
-  <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 6 of 9</span>
-  </div>
-</div>
-
-
-
-<!-- ═══════════════════════════════════════
-  PAGE 7 — SECTION 6 & 7: REPORTS + SETTINGS
-═══════════════════════════════════════ -->
-<div class="page">
-  <div class="doc-header">
-    <div class="dh-left">
-      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
-      <span class="dh-name">Amari POS</span>
-    </div>
+    <div class="dh-left"><div class="dh-icon"><img src="amari-blue-logo.png" alt="Amari Logo"></div><span class="dh-name">Amari POS</span></div>
     <span class="dh-right">User Manual v1.0</span>
   </div>
 
@@ -904,401 +877,302 @@ p.txt strong { color: #0F172A; font-weight: 600; }
     <div class="sec-title">Sales Reports</div>
     <div class="sec-rule"></div>
 
-    <p class="txt">The Reports module shows revenue summaries, transaction history, and exportable data. Available to <span class="rp rp-o">Owner</span> and <span class="rp rp-m">Manager</span>.</p>
+    <p class="txt">Available to <span class="rp rp-o">Owner</span> and <span class="rp rp-m">Manager</span>. The Reports module shows revenue summaries, transaction history, and exportable CSV data.</p>
 
-    <div class="fig-frame" style="margin-top:4px;">
+    <div class="norman">
+      <div class="norman-header"><em>🔄</em><span>Interaction Flow — Section 5: Sales Reports</span></div>
+      <div class="norman-grid">
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">🎯</span>User Goal</div><div class="nc-val">Review business performance and identify sales trends</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⌨️</span>User Input</div><div class="nc-val">Select a date range; browse cards, chart, and top products list</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⚙️</span>System Process</div><div class="nc-val">Queries transaction records within the period; computes totals and rankings</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">📤</span>Output</div><div class="nc-val">Revenue cards and chart displayed; CSV downloads on export</div></div>
+      </div>
+    </div>
+
+    <div class="fig-frame" style="margin-top:8px;">
       <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="fig-url">Amari POS › Reports</span></div>
-      <div class="fig-body">
+      <div style="padding:11px 13px;">
+        <!-- Export Controls Row -->
+        <div style="display:flex; align-items:center; justify-content:flex-end; gap:10px; margin-bottom:10px;">
+          <div style="display:flex; align-items:center; gap:6px; padding:5px 12px; border:1.5px solid #E2E8F0; border-radius:6px; background:#fff; font-size:9px; color:#374151; font-weight:500;">
+            Daily
+            <span style="font-size:7px; color:#94A3B8;">▼</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:5px; background:#1B3FAB; color:#fff; padding:5px 12px; border-radius:6px; font-size:9px; font-weight:600;">
+            <span style="font-size:10px;">⬇</span> Export
+          </div>
+        </div>
         <div class="rcards">
-          <div class="rcard" style="background:#1B3FAB;color:#fff;">
-            <div class="rl" style="color:rgba(255,255,255,0.5);">TOTAL REVENUE</div>
-            <div class="rv">₱14,280</div>
-            <div class="rs" style="color:#93C5FD;">▲ +12% this week</div>
+          <div class="rcard" style="background:#1B3FAB;color:#fff;"><div class="rl" style="color:rgba(255,255,255,0.5);">TOTAL REVENUE</div><div class="rv">₱14,280</div><div class="rs" style="color:#93C5FD;">▲ +12% this week</div></div>
+          <div class="rcard" style="background:#0D7A6E;color:#fff;"><div class="rl" style="color:rgba(255,255,255,0.5);">TRANSACTIONS</div><div class="rv">143</div><div class="rs" style="color:#A7F3D0;">Today</div></div>
+          <div class="rcard" style="background:#F8FAFC;border:1.5px solid #E2E8F0;"><div class="rl" style="color:#94A3B8;">AVG ORDER</div><div class="rv" style="color:#0F172A;">₱99.86</div><div class="rs" style="color:#B45309;">Per transaction</div></div>
+        </div>
+        <!-- Mini Chart -->
+        <div style="margin-top:10px;">
+          <div style="font-size:8.5px; font-weight:700; color:#0F172A; margin-bottom:7px;">Sales Overview</div>
+          <div style="height:60px; display:flex; align-items:flex-end; gap:4px;">
+            <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:40%;"></div>
+            <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:60%;"></div>
+            <div style="flex:1;background:#1B3FAB;border-radius:2px 2px 0 0;height:85%;"></div>
+            <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:55%;"></div>
+            <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:70%;"></div>
+            <div style="flex:1;background:#1B3FAB;border-radius:2px 2px 0 0;height:90%;"></div>
+            <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:50%;"></div>
           </div>
-          <div class="rcard" style="background:#0D7A6E;color:#fff;">
-            <div class="rl" style="color:rgba(255,255,255,0.5);">TRANSACTIONS</div>
-            <div class="rv">143</div>
-            <div class="rs" style="color:#A7F3D0;">Today</div>
-          </div>
-          <div class="rcard" style="background:#F8FAFC;border:1.5px solid #E2E8F0;">
-            <div class="rl" style="color:#94A3B8;">AVG ORDER</div>
-            <div class="rv" style="color:#0F172A;">₱99.86</div>
-            <div class="rs" style="color:#B45309;">Per transaction</div>
-          </div>
+          <div style="font-size:7.5px; color:#94A3B8; text-align:center; margin-top:5px;">Daily sales performance (₱)</div>
         </div>
       </div>
     </div>
-    <p class="fig-cap">Figure 7 — Summary cards showing total revenue, transactions, and average order value</p>
+    <p class="fig-cap">Figure 8 — Reports: revenue cards, export controls, and daily sales chart</p>
 
-    <div class="two-col" style="grid-template-columns: 360px 1fr; align-items: start; margin-top:10px;">
-      <div>
-        <div class="fig-frame" style="width: 360px; max-width: 360px;">
-          <div class="fig-bar">
-            <div class="dot" style="background:#FF5F57"></div>
-            <div class="dot" style="background:#FEBC2E"></div>
-            <div class="dot" style="background:#28C840"></div>
-            <span class="fig-url">Amari POS › Sales Chart</span>
-          </div>
-          <div style="padding:12px;background:#F8FAFC;">
-            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:8px;">Sales Overview</div>
-            <div style="height:80px;display:flex;align-items:flex-end;gap:3px;">
-              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:40%;"></div>
-              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:60%;"></div>
-              <div style="flex:1;background:#1B3FAB;border-radius:2px 2px 0 0;height:85%;"></div>
-              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:55%;"></div>
-              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:70%;"></div>
-              <div style="flex:1;background:#1B3FAB;border-radius:2px 2px 0 0;height:90%;"></div>
-              <div style="flex:1;background:#C7D2FE;border-radius:2px 2px 0 0;height:50%;"></div>
-            </div>
-            <div style="font-size:8px;color:#94A3B8;text-align:center;margin-top:6px;">Daily sales performance (₱)</div>
-          </div>
-        </div>
-        <p class="fig-cap">Figure 7.1 — Sales Overview chart with daily performance</p>
-      </div>
-      <div>
-        <div class="note note-info" style="margin-top:0;">
-          <div class="nicon">📊</div>
-          <div class="ntxt"><strong>Chart insights</strong>Bars show daily revenue. Colors distinguish peak days (blue) from regular days (light blue). Use the date filter above to adjust the time period.</div>
-        </div>
-        <div class="note note-tip" style="margin-top:10px;">
-          <div class="nicon">💡</div>
-          <div class="ntxt"><strong>Data interpretation</strong>Higher bars indicate better sales performance. Compare week-to-week trends to identify seasonal patterns and business cycles.</div>
-        </div>
+    <div class="sub-title" style="margin-top:10px;">Exporting Data</div>
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><div class="stxt">Select the date range using the <strong>Daily/Weekly/Monthly</strong> dropdown.</div></div>
+      <div class="step"><div class="snum">2</div><div class="stxt">Click the <strong>Export</strong> button to download a CSV file.</div></div>
+      <div class="step"><div class="snum">3</div><div class="stxt">The file includes all transactions, stock adjustments, and payment details for the selected period.</div></div>
+    </div>
+
+    <div class="flow-box" style="margin-top:10px;">
+      <div class="flow-label">Reports Flow</div>
+      <div class="flow-chain">
+        <div class="fn">Set date range</div><div class="fa">→</div>
+        <div class="fn">System queries data</div><div class="fa">→</div>
+        <div class="fn">Charts &amp; totals shown</div><div class="fa">→</div>
+        <div class="fn">Export CSV</div>
       </div>
     </div>
 
-    <div class="two-col" style="grid-template-columns: 360px 1fr; align-items: start; margin-top:10px;">
-      <div>
-        <div class="fig-frame" style="width: 360px; max-width: 360px;">
-          <div class="fig-bar">
-            <div class="dot" style="background:#FF5F57"></div>
-            <div class="dot" style="background:#FEBC2E"></div>
-            <div class="dot" style="background:#28C840"></div>
-            <span class="fig-url">Amari POS › Top Products</span>
-          </div>
-          <div style="padding:12px;background:#fff;">
-            <div style="font-size:9px;font-weight:700;color:#0F172A;margin-bottom:8px;">Top Selling Products</div>
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <div style="display:flex;align-items:center;gap:8px;padding:5px;border:1px solid #E2E8F0;border-radius:4px;">
-                <div style="width:24px;height:24px;background:#1B3FAB;color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;">1</div>
-                <div style="flex:1;">
-                  <div style="font-size:8.5px;font-weight:600;color:#0F172A;">Caramel Latte Frappe</div>
-                  <div style="font-size:8px;color:#94A3B8;">6 units sold</div>
-                </div>
-                <div style="font-size:8.5px;font-weight:700;color:#0D7A6E;">₱294.00</div>
-              </div>
-              <div style="display:flex;align-items:center;gap:8px;padding:5px;border:1px solid #E2E8F0;border-radius:4px;">
-                <div style="width:24px;height:24px;background:#0D7A6E;color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;">2</div>
-                <div style="flex:1;">
-                  <div style="font-size:8.5px;font-weight:600;color:#0F172A;">Caramel Macchiato</div>
-                  <div style="font-size:8px;color:#94A3B8;">5 units sold</div>
-                </div>
-                <div style="font-size:8.5px;font-weight:700;color:#0D7A6E;">₱245.00</div>
-              </div>
-              <div style="display:flex;align-items:center;gap:8px;padding:5px;border:1px solid #E2E8F0;border-radius:4px;">
-                <div style="width:24px;height:24px;background:#6B7280;color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;">3</div>
-                <div style="flex:1;">
-                  <div style="font-size:8.5px;font-weight:600;color:#0F172A;">Blue Lemonade</div>
-                  <div style="font-size:8px;color:#94A3B8;">5 units sold</div>
-                </div>
-                <div style="font-size:8.5px;font-weight:700;color:#0D7A6E;">₱245.00</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="fig-cap">Figure 7.2 — Top Selling Products ranked by units and revenue</p>
-      </div>
-      <div>
-        <div class="note note-ok" style="margin-top:0;">
-          <div class="nicon">🏆</div>
-          <div class="ntxt"><strong>Best performers</strong>Top three products drive majority of revenue. Track these closely to identify which items maintain customer loyalty and seasonal demand.</div>
-        </div>
-        <div class="note note-info" style="margin-top:10px;">
-          <div class="nicon">📈</div>
-          <div class="ntxt"><strong>Strategic insight</strong>Use this data to stock sufficient inventory for top sellers and cross-sell complementary items. Update pricing based on demand trends.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="two-col" style="margin-top:4px;">
-      <div>
-        <div class="sub-title" style="margin-top:0;">Viewing &amp; Filtering Reports</div>
-        <div class="steps">
-          <div class="step"><div class="snum">1</div><div class="stxt">Click <strong>Reports</strong> in the sidebar to access the dashboard.</div></div>
-          <div class="step"><div class="snum">2</div><div class="stxt">Use the <strong>date filter</strong> to select daily, weekly, or monthly view.</div></div>
-          <div class="step"><div class="snum">3</div><div class="stxt">Review the <strong>summary cards</strong> for quick metrics and trends.</div></div>
-          <div class="step"><div class="snum">4</div><div class="stxt">Analyze the <strong>chart</strong> to identify patterns and peak sales periods.</div></div>
-        </div>
-      </div>
-      <div>
-        <div class="flow-box" style="margin-top:0;">
-          <div class="flow-label">Report Analysis Flow</div>
-          <div class="flow-chain">
-            <div class="fn">Filter by date</div><div class="fa">→</div>
-            <div class="fn">View summary cards</div><div class="fa">→</div>
-            <div class="fn">Analyze chart data</div><div class="fa">→</div>
-            <div class="fn">Review top products</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="sub-title" style="margin-top:14px;">Daily Export</div>
-    <div style="border:1.5px solid #E2E8F0;border-radius:8px;padding:14px;background:#fff;max-width:500px;">
-      <p class="txt" style="margin-bottom:12px;font-size:11.5px;">Click the button below to automatically export today's sales data as a CSV file. The system captures all transactions from the current day with complete details.</p>
-      <div style="background:#E0E7FF;color:#1B3FAB;border-radius:5px;padding:8px 12px;text-align:center;font-size:9.5px;font-weight:700;cursor:pointer;border:2px solid #1B3FAB;">📊 Export Today's Sales</div>
-      <div class="note note-info" style="margin-top:10px;padding:10px 12px;">
-        <div class="nicon" style="font-size:13px;">ℹ️</div>
-        <div class="ntxt" style="font-size:11px;"><strong>Auto-export</strong>The file includes all transactions, stock adjustments, and adjustments for today's date.</div>
-      </div>
-    </div>
-
-    <div class="div"></div>
-
-    <div class="sec-label">Section 6</div>
-    <div class="sec-title">Settings</div>
-    <div class="sec-rule"></div>a
-
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-      <div>
-        <div class="sub-title" style="font-size:12px;">6.1 User Management<br><span class="rp rp-o" style="font-size:9px;">Owner only</span></div>
-        <ul class="blist">
-          <li>Go to <strong>Settings → Users</strong></li>
-          <li>Click <strong>Add User</strong> and assign a role</li>
-          <li>Click <strong>Edit</strong> to update details</li>
-          <li>Toggle <strong>Active</strong> off to remove access</li>
-        </ul>
-      </div>
-      <div>
-        <div class="sub-title" style="font-size:12px;">6.2 Tax &amp; Receipt<br><span class="rp rp-o" style="font-size:9px;">Owner only</span></div>
-        <ul class="blist">
-          <li>Set the <strong>Tax Rate</strong> (% on all sales)</li>
-          <li><strong>Receipt Header</strong> — business name/address</li>
-          <li><strong>Receipt Footer</strong> — thank-you message</li>
-          <li>Toggle <strong>Auto-Print</strong> on/off</li>
-        </ul>
-      </div>
-      <div>
-        <div class="sub-title" style="font-size:12px;">6.3 Appearance<br><span style="font-size:10px;font-weight:400;color:#6B7280;">All roles</span></div>
-        <ul class="blist">
-          <li>Toggle <strong>Light / Dark</strong> mode</li>
-          <li>Theme applies immediately</li>
-          <li>Setting saves automatically — no need to change it next time</li>
-        </ul>
-        <div class="note note-tip" style="margin-top:8px;padding:8px 12px;">
-          <div class="nicon" style="font-size:13px;">💡</div>
-          <div class="ntxt" style="font-size:11px;"><strong>Tip</strong>Dark mode reduces eye strain during long shifts.</div>
-        </div>
-      </div>
+    <div class="note note-info" style="margin-top:10px;">
+      <div class="nicon">💡</div>
+      <div class="ntxt"><strong>Export tip:</strong> Exported CSV files can be opened in Excel or Google Sheets for further analysis, pivot tables, and custom charts.</div>
     </div>
 
   </div>
 
   <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 6 of 9</span>
+    <span class="df-t">Amari POS &amp; Inventory Management System</span>
+    <span class="df-t">Page 6 of 8</span>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════
-  PAGE 7 — SECTION 6 SETTINGS & SECTION 7: LOGOUT
-═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════
+  PAGE 7 — SETTINGS + LOGOUT
+═══════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
-    <div class="dh-left">
-      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
-      <span class="dh-name">Amari POS</span>
-    </div>
+    <div class="dh-left"><div class="dh-icon"><img src="amari-blue-logo.png" alt="Amari Logo"></div><span class="dh-name">Amari POS</span></div>
     <span class="dh-right">User Manual v1.0</span>
   </div>
 
   <div class="body">
 
+    <div class="sec-label">Section 6</div>
+    <div class="sec-title">Settings</div>
+    <div class="sec-rule"></div>
+
+    <p class="txt">Available to <span class="rp rp-o">Owner</span> only. The Settings module allows you to configure users, tax rates, receipt formatting, and system appearance.</p>
+
+    <div class="norman">
+      <div class="norman-header"><em>🔄</em><span>Interaction Flow — Section 6: Settings</span></div>
+      <div class="norman-grid">
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">🎯</span>User Goal</div><div class="nc-val">Configure users, tax, receipts, and appearance</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⌨️</span>User Input</div><div class="nc-val">Fill in fields, assign role, then click Save or Create</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⚙️</span>System Process</div><div class="nc-val">Saves configuration and applies changes system-wide</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">📤</span>Output</div><div class="nc-val">New user or setting takes effect immediately</div></div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:10px;">
+      <div>
+        <div class="sub-title" style="margin-top:0;">User Management</div>
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="stxt">Navigate to <strong>Settings → Users</strong>.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Click <strong>Add User</strong> and fill in name, username, password.</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">Assign a role: <span class="rp rp-o">Owner</span>, <span class="rp rp-m">Manager</span>, or <span class="rp rp-c">Cashier</span>.</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">Click <strong>Save</strong> — the user can now log in.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="sub-title" style="margin-top:0;">Tax &amp; Receipt Settings</div>
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="stxt">Go to <strong>Settings → Tax &amp; Receipt</strong>.</div></div>
+          <div class="step"><div class="snum">2</div><div class="stxt">Set the <strong>Tax Rate</strong> (percentage).</div></div>
+          <div class="step"><div class="snum">3</div><div class="stxt">Edit the <strong>Receipt Header</strong> (store name/address).</div></div>
+          <div class="step"><div class="snum">4</div><div class="stxt">Edit the <strong>Receipt Footer</strong> (thank you message).</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-box" style="margin-top:10px;">
+      <div class="flow-label">Settings Flow</div>
+      <div class="flow-chain">
+        <div class="fn">Open Settings</div><div class="fa">→</div>
+        <div class="fn">Edit fields</div><div class="fa">→</div>
+        <div class="fn">Click Save</div><div class="fa">→</div>
+        <div class="fn">Changes applied</div>
+      </div>
+    </div>
+
+    <div class="note note-info" style="margin-top:10px;">
+      <div class="nicon">💡</div>
+      <div class="ntxt"><strong>Left-Handed Mode:</strong> Toggle this setting to shift the cart panel to the left, making it more comfortable for left-handed users.</div>
+    </div>
+
+    <div class="div"></div>
+
     <div class="sec-label">Section 7</div>
     <div class="sec-title">Logging Out</div>
     <div class="sec-rule"></div>
 
-    <div class="two-col">
-      <div>
-        <p class="txt">Always log out when you are finished — especially on shared devices. The <strong>Logout</strong> button is at the bottom of the sidebar and is visible from every screen.</p>
+    <p class="txt">Always log out when finished to protect account security, especially on shared workstations.</p>
 
-        <div class="steps">
-          <div class="step"><div class="snum red">1</div><div class="stxt">Find the <strong>⏻ Logout</strong> button at the bottom of the left sidebar.</div></div>
-          <div class="step"><div class="snum red">2</div><div class="stxt">Click <strong>Logout</strong>. The system ends your session immediately.</div></div>
-          <div class="step"><div class="snum red">3</div><div class="stxt">The <strong>Login screen</strong> appears. Another user may now sign in safely.</div></div>
-        </div>
-
-        <div class="note note-warn">
-          <div class="nicon">🔐</div>
-          <div class="ntxt"><strong>Security reminder</strong>Leaving a session open lets others use your account and creates inaccurate activity records.</div>
-        </div>
-
-        <div class="flow-box" style="margin-top:12px;">
-          <div class="flow-label">Logout Flow</div>
-          <div class="flow-chain">
-            <div class="fn">Click Logout</div><div class="fa">→</div>
-            <div class="fn">Session is cleared</div><div class="fa">→</div>
-            <div class="fn">Login screen appears</div>
-          </div>
-        </div>
+    <div class="norman">
+      <div class="norman-header"><em>🔄</em><span>Interaction Flow — Section 7: Logout</span></div>
+      <div class="norman-grid">
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">🎯</span>User Goal</div><div class="nc-val">End session securely to protect account</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⌨️</span>User Input</div><div class="nc-val">Click <strong>⏻ Logout</strong> at the bottom of the sidebar</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">⚙️</span>System Process</div><div class="nc-val">Clears session token and revokes all in-session permissions</div></div>
+        <div class="norman-cell"><div class="nc-label"><span class="nc-icon">📤</span>Output</div><div class="nc-val">Login screen reappears; data inaccessible until re-authentication</div></div>
       </div>
+    </div>
 
+    <div class="two-col" style="margin-top:10px;">
       <div>
-        <div class="fig-frame" style="margin-top:4px;">
-          <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div></div>
-          <div class="sb-mock" style="min-height:180px;">
-            <div class="sb">
+        <!-- Logout Figure - Sidebar with Logout highlighted -->
+        <div class="fig-frame">
+          <div class="fig-bar"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span class="fig-url">Sidebar Navigation</span></div>
+          <div class="sb-mock">
+            <div class="sb" style="min-height:120px;">
               <div class="sb-nav">
-                <div class="sb-item">⬡ Dashboard</div>
+                <div class="sb-item">📊 Dashboard</div>
                 <div class="sb-item">🛒 POS</div>
                 <div class="sb-item">📦 Inventory</div>
-                <div class="sb-item">📊 Reports</div>
+                <div class="sb-item">📈 Reports</div>
                 <div class="sb-item">⚙️ Settings</div>
               </div>
-              <div class="sb-logout">⏻ Logout</div>
+              <div class="sb-logout" style="margin-top:8px;">⏻ Logout</div>
             </div>
-            <div class="sb-content">Main content area</div>
+            <div class="sb-content" style="flex:1;">Main content area</div>
           </div>
         </div>
-        <p class="fig-cap">Figure 8 — Logout button always visible at sidebar bottom</p>
+        <p class="fig-cap">Figure 10 — Logout button location in sidebar</p>
+      </div>
+      <div>
+        <div class="sub-title" style="margin-top:0;">Logout Steps</div>
+        <div class="steps">
+          <div class="step"><div class="snum red">1</div><div class="stxt">Find <strong>⏻ Logout</strong> at the bottom of the sidebar.</div></div>
+          <div class="step"><div class="snum red">2</div><div class="stxt">Click <strong>Logout</strong> — session ends immediately.</div></div>
+          <div class="step"><div class="snum red">3</div><div class="stxt">The <strong>Login screen</strong> appears; another user may now sign in.</div></div>
+        </div>
+        <div class="note note-warn" style="margin-top:10px;">
+          <div class="nicon">🔐</div>
+          <div class="ntxt"><strong>Security reminder:</strong> Always log out on shared devices to prevent unauthorized access to sales data and settings.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-box" style="margin-top:10px;">
+      <div class="flow-label">Logout Flow</div>
+      <div class="flow-chain">
+        <div class="fn">Click Logout</div><div class="fa">→</div>
+        <div class="fn">Session cleared</div><div class="fa">→</div>
+        <div class="fn">Login screen</div>
       </div>
     </div>
 
   </div>
 
   <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 7 of 9</span>
+    <span class="df-t">Amari POS &amp; Inventory Management System</span>
+    <span class="df-t">Page 7 of 8</span>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════
-  PAGE 8 — SECTION 8: FAQ & TROUBLESHOOTING
-═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════
+  PAGE 8 — TROUBLESHOOTING
+═══════════════════════════════ -->
 <div class="page">
   <div class="doc-header">
-    <div class="dh-left">
-      <div class="dh-icon"><img src="/amari-blue-logo.png" alt="Amari Logo"></div>
-      <span class="dh-name">Amari POS</span>
-    </div>
+    <div class="dh-left"><div class="dh-icon"><img src="amari-blue-logo.png" alt="Amari Logo"></div><span class="dh-name">Amari POS</span></div>
     <span class="dh-right">User Manual v1.0</span>
   </div>
 
   <div class="body">
 
     <div class="sec-label">Section 8</div>
-    <div class="sec-title">Troubleshooting &amp; Common Questions</div>
+    <div class="sec-title">Troubleshooting &amp; FAQs</div>
     <div class="sec-rule"></div>
 
-    <p class="txt">If something is not working as expected, check the relevant answer below. For issues not listed here, contact your system administrator.</p>
+    <p class="txt">If something is not working as expected, check below. For issues not listed here, contact your system administrator.</p>
 
     <div class="faq">
       <div class="faq-item">
         <div class="faq-q"><div class="fqm">Q</div>I cannot log in. What should I do?</div>
-        <div class="faq-a">Make sure you are using the correct email and password — both fields are case-sensitive. Check that Caps Lock is off. If you have forgotten your password, ask your Owner or Manager to reset it under <strong>Settings → Users</strong>.</div>
+        <div class="faq-a">Check that you are using the correct username and password — both fields are case-sensitive and Caps Lock must be off. If you have forgotten your password, ask your Owner or Manager to reset it under <strong>Settings → Users</strong>.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><div class="fqm">Q</div>Stock levels look wrong after a sale.</div>
-        <div class="faq-a">Stock is deducted automatically when a sale is completed. Go to <strong>Inventory → Products</strong>, click <strong>Edit</strong> on the product, and correct the quantity manually. For recurring issues, review the transaction history in <strong>Reports</strong>.</div>
+        <div class="faq-a">Stock is deducted automatically when a sale is completed. Go to <strong>Inventory → Products</strong>, click <span class="tag-edit">✏ Edit</span> on the product, and correct the quantity. For recurring discrepancies, review the transaction history in <strong>Reports</strong>.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><div class="fqm">Q</div>The Reports page shows no data.</div>
-        <div class="faq-a">Check the <strong>date filter</strong> at the top of the page. Reset it to the past 30 days to see if results appear. If the page is still empty, confirm that at least one sale has been completed in the system.</div>
+        <div class="faq-a">Check the <strong>date filter</strong> at the top of the Reports page. Reset it to the past 30 days. If the page is still empty, confirm that at least one sale has been completed in the system.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><div class="fqm">Q</div>The barcode scanner is not working.</div>
-        <div class="faq-a">Check that your browser has camera permission enabled — look for the camera icon in the address bar and click <strong>Allow</strong>. Refresh the POS page after granting access. If the issue continues, try a different browser or search for the product manually by name.</div>
+        <div class="faq-a">Check that your browser has camera permission enabled — look for the camera icon in the address bar and click <strong>Allow</strong>. Refresh the POS page after granting access. If the issue continues, search for the product by name instead.</div>
       </div>
     </div>
 
-    <!-- back cover strip -->
-    <div style="margin-top:28px;background:#1B3FAB;border-radius:10px;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;">
+    <!-- Quick Reference Summary -->
+    <div style="margin-top:20px;">
+      <div class="sec-label">Quick Reference</div>
+      <div class="sec-title" style="font-size:14px;">Interaction Summary</div>
+      <div class="sec-rule"></div>
+
+      <table class="dtable">
+        <thead><tr><th>Section</th><th>User Goal</th><th>User Action</th><th>System Output</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Login</strong></td><td>Access system</td><td>Enter credentials → Sign In</td><td>Dashboard loads or error shown</td></tr>
+          <tr><td><strong>Dashboard</strong></td><td>Monitor store</td><td>View summary cards</td><td>Real-time data and alerts</td></tr>
+          <tr><td><strong>POS</strong></td><td>Process sale</td><td>Select items → Checkout → Pay</td><td>Receipt + stock deducted</td></tr>
+          <tr><td><strong>Inventory</strong></td><td>Manage stock</td><td>Add / Edit / Delete items</td><td>Updated catalog + alerts</td></tr>
+          <tr><td><strong>Reports</strong></td><td>Review performance</td><td>Set date range → Export</td><td>Charts + CSV download</td></tr>
+          <tr><td><strong>Settings</strong></td><td>Configure system</td><td>Update fields → Save</td><td>Changes apply system-wide</td></tr>
+          <tr><td><strong>Logout</strong></td><td>End session</td><td>Click ⏻ Logout</td><td>Login screen appears</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Back Cover Strip -->
+    <div style="margin-top:24px; background:#1B3FAB; border-radius:10px; padding:16px 22px; display:flex; justify-content:space-between; align-items:center;">
       <div>
-        <div style="font-size:13px;font-weight:800;color:#fff;letter-spacing:-0.3px;">Amari POS &amp; Inventory Management System</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px;font-family:'JetBrains Mono',monospace;">User Manual — Version 1.0 — March 2, 2026</div>
+        <div style="font-size:13px; font-weight:800; color:#fff; letter-spacing:-0.3px;">Amari POS &amp; Inventory Management System</div>
+        <div style="font-size:9.5px; color:rgba(255,255,255,0.4); margin-top:2px; font-family:'JetBrains Mono',monospace;">User Manual — Version 1.0 — March 2026</div>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:9px;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,0.3);letter-spacing:1px;">FOR INTERNAL USE</div>
-        <div style="font-size:11px;color:#93C5FD;font-weight:600;margin-top:2px;">Staff Operation Guide</div>
+        <div style="font-size:9px; font-family:'JetBrains Mono',monospace; color:rgba(255,255,255,0.3); letter-spacing:1px;">FOR INTERNAL USE</div>
+        <div style="font-size:11px; color:#93C5FD; font-weight:600; margin-top:2px;">Staff Operation Guide</div>
       </div>
     </div>
 
   </div>
 
   <div class="doc-footer">
-    <span class="df-t">Amari POS &amp; Inventory Management System — User Manual</span>
-    <span class="df-t">Page 8 of 9</span>
+    <span class="df-t">Amari POS &amp; Inventory Management System</span>
+    <span class="df-t">Page 8 of 8</span>
   </div>
 </div>
 
-
-<button class="dl-btn" id="downloadBtn">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-    <polyline points="7 10 12 15 17 10"/>
-    <line x1="12" y1="15" x2="12" y2="3"/>
+<!-- Save as PDF Button -->
+<button class="dl-btn" onclick="window.print()">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
   </svg>
-  Download PDF
+  Save as PDF
 </button>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-  document.getElementById('downloadBtn').addEventListener('click', async function () {
-    var btn = this;
-    btn.textContent = 'Generating PDF…';
-    btn.style.pointerEvents = 'none';
-
-    var pages = document.querySelectorAll('.page');
-    var pdf = new jspdf.jsPDF({ unit: 'in', format: [8.5, 13], orientation: 'portrait' });
-
-    pages.forEach(function (p) {
-      p.dataset.origHeight = p.style.height;
-      p.dataset.origMaxH = p.style.maxHeight;
-      p.dataset.origOverflow = p.style.overflow;
-      p.dataset.origMargin = p.style.margin;
-      p.dataset.origShadow = p.style.boxShadow;
-      p.style.height = '1248px';
-      p.style.maxHeight = '1248px';
-      p.style.overflow = 'hidden';
-      p.style.margin = '0';
-      p.style.boxShadow = 'none';
-    });
-
-    for (var i = 0; i < pages.length; i++) {
-      var canvas = await html2canvas(pages[i], {
-        scale: 2,
-        useCORS: true,
-        allowTaint: true,
-        width: 816,
-        height: 1248,
-        scrollX: 0,
-        scrollY: 0,
-        windowWidth: 816
-      });
-
-      var imgData = canvas.toDataURL('image/jpeg', 0.98);
-      if (i > 0) pdf.addPage([8.5, 13], 'portrait');
-      pdf.addImage(imgData, 'JPEG', 0, 0, 8.5, 13);
-    }
-
-    pdf.save('Amari-POS-User-Manual.pdf');
-
-    pages.forEach(function (p) {
-      p.style.height = p.dataset.origHeight;
-      p.style.maxHeight = p.dataset.origMaxH;
-      p.style.overflow = p.dataset.origOverflow;
-      p.style.margin = p.dataset.origMargin || '20px auto';
-      p.style.boxShadow = p.dataset.origShadow || '0 2px 20px rgba(0,0,0,0.18)';
-    });
-
-    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download PDF';
-    btn.style.pointerEvents = '';
-  });
-</script>
 
 </body>
 </html>
